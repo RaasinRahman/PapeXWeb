@@ -2,9 +2,16 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'PapeX',
+  description: 'Digital Receipts Revolutionized',
   generator: 'v0.dev',
+  icons: {
+    icon: [
+      { url: '/favicon.png' },
+      { url: '/icons/Orange Primary/Orange-Navy.png' }
+    ],
+    apple: '/icons/Orange Primary/Orange-Navy.png',
+  }
 }
 
 export default function RootLayout({
