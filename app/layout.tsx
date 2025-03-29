@@ -7,10 +7,13 @@ export const metadata: Metadata = {
   generator: 'v0.dev',
   icons: {
     icon: [
-      { url: '/favicon.png' },
-      { url: '/icons/Orange Primary/Orange-Navy.png' }
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' }
     ],
-    apple: '/icons/Orange Primary/Orange-Navy.png',
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png' }
+    ]
   }
 }
 
