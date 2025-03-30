@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Clock, DollarSign, BarChart3, Send, Menu } from "lucide-react"
+import { CheckCircle, Clock, DollarSign, BarChart3, Menu } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 

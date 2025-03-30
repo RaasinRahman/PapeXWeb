@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle, Send, Loader2, Mail, User, Briefcase, UserRound, MessageSquare } from "lucide-react"
 // Firebase imports
 import { initializeApp } from "firebase/app"
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 // Firebase configuration

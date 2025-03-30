@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Send, Linkedin, Mail } from "lucide-react"
+import { Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TeamImage } from "@/components/team-image"
 
@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     fallbackImage: "/profiles/john.svg",
     linkedin: "https://www.linkedin.com/in/jackson-rover-65211521b/",
     email: "jcrover@syr.edu",
-    bio: "Jackson’s role at PapeX is to create a full-scale valuation to accurately present the value of PapeX to investors to secure initial financing for the company."
+    bio: "Jackson's role at PapeX is to create a full-scale valuation to accurately present the value of PapeX to investors to secure initial financing for the company."
   },
   {
     name: "Raasin Rahman",

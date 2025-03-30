@@ -1,8 +1,7 @@
 import Link from "next/link"
-import { Send, ArrowLeft } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import WaitlistFormEnhanced from "@/components/waitlist-form-enhanced"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 export default function WaitlistPage() {
   return (
