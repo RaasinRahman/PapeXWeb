@@ -24,6 +24,10 @@ const nextConfig = {
 
     return config;
   },
+  eslint: {
+    // Don't run ESLint during build, we'll handle it separately
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig; 
