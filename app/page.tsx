@@ -155,11 +155,11 @@ export default function Home() {
               <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
                 <h3 className="text-2xl font-bold text-[#0a3d62] mb-4">Win for Merchants</h3>
                 <p className="text-[#0a3d62] mb-6">
-                  Merchants will save time and money by eliminating the need for physical receipts.
+                  Merchants will save time, money, and reduce waste by eliminating physical receipts.
                 </p>
                 <div className="h-1 w-16 bg-[#ff9933] mb-6"></div>
                 <p className="text-[#0a3d62] font-medium">
-                  Reduced costs and faster checkout times lead to better customer experiences.
+                  Lower costs, faster checkout times, and minimized waste leading to a better customer experience.
                 </p>
               </div>
               <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
@@ -169,7 +169,7 @@ export default function Home() {
                   financial and expense management.
                 </p>
                 <div className="h-1 w-16 bg-[#ff9933] mb-6"></div>
-                <p className="text-[#0a3d62] font-medium">Simplified expense tracking and financial management.</p>
+                <p className="text-[#0a3d62] font-medium">Simplified expense tracking and financial management, all while reducing their carbon footprint.</p>
               </div>
             </div>
           </div>
@@ -187,8 +187,7 @@ export default function Home() {
                   subscription-based pricing, depending on the model chosen by the merchant.
                 </p>
                 <p className="text-lg text-white">
-                  Additionally, beyond these core pricing models, we will generate income through data monetization and
-                  B2B integrations with accounting and financial software.
+                  In addition to these core pricing models, we will generate revenue through non-PII data monetization and B2B integrations with tax, accounting, and financial software.
                 </p>
               </div>
               <div className="md:w-1/2 flex justify-center">
@@ -196,15 +195,15 @@ export default function Home() {
                   <div className="absolute inset-0 rounded-full border-8 border-white opacity-20"></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#ff9933] opacity-80"
-                    style={{ clipPath: "polygon(0 0, 26.26% 0, 26.26% 100%, 0 100%)" }}
+                    style={{ clipPath: "polygon(50% 50%, 50% 0, 26.26% 0, 0 0, 0 50%, 0 100%, 26.26% 100%)" }}
                   ></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#44c8e8] opacity-80"
-                    style={{ clipPath: "polygon(26.26% 0, 46.77% 0, 46.77% 100%, 26.26% 100%)" }}
+                    style={{ clipPath: "polygon(50% 50%, 26.26% 0, 46.77% 0, 46.77% 100%, 26.26% 100%)" }}
                   ></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-white"
-                    style={{ clipPath: "polygon(46.77% 0, 100% 0, 100% 100%, 46.77% 100%)" }}
+                    style={{ clipPath: "polygon(50% 50%, 46.77% 0, 100% 0, 100% 100%, 46.77% 100%)" }}
                   ></div>
                   <div className="absolute inset-0 flex items-center justify-center flex-col text-center">
                     <p className="text-sm text-white">Core Receipt Based</p>
@@ -276,8 +275,7 @@ export default function Home() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Show Your Support!</h2>
             <p className="text-xl max-w-2xl mx-auto mb-12">
-              PapeX is looking for people to <span className="text-[#ff9933]">join our waitlist</span> as we search for
-              investors. There is no obligation or commitment on your part. If you're interested, all we need is:
+              PapeX is currently building our waitlist as we seek investors. There's no obligation or commitment on your part, but if you're interested click here!
             </p>
 
             <div className="max-w-md mx-auto">

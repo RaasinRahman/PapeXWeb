@@ -26,7 +26,7 @@ export default function WaitlistPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-[#0a3d62] mb-4 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] bg-clip-text text-transparent">Join Our Waitlist</h1>
             <div className="w-24 h-1 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] mx-auto mb-6 rounded-full"></div>
             <p className="text-xl text-[#0a3d62] max-w-2xl mx-auto leading-relaxed">
-              PapeX is looking for people to join our waitlist as we search for investors. There is no obligation or commitment on your part.
+              PapeX is looking for people to join our waitlist as we search for investors. There is no obligation or commitment on your part. If you're interested, all we need is:
             </p>
 
             <div className="flex flex-row items-center justify-center mt-8 space-x-6 flex-wrap gap-y-4">

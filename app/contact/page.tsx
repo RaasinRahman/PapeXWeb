@@ -56,7 +56,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Lia Courbage",
-    role: "CMO",
+    role: "Head of Marketing and Branding",
     image: "/profiles/lia_courbage.jpeg",
     fallbackImage: "/profiles/lia.svg",
     linkedin: "https://www.linkedin.com/in/lia-courbage-102971165/",
@@ -65,7 +65,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Magali Courbage",
-    role: "Member of the Board of Directors",
+    role: "Advisor / Board Member",
     image: "/profiles/magali_courbage.jpeg",
     fallbackImage: "/profiles/magali.svg",
     linkedin: "https://www.linkedin.com/in/magali-courbage-03b8968/",
@@ -74,7 +74,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Bruno Courbage",
-    role: "Member of the Board of Director",
+    role: "Advisor / Board Member",
     image: "/profiles/bruno_courbage.jpeg",
     fallbackImage: "/profiles/bruno.svg",
     linkedin: "https://www.linkedin.com/in/brunocourbage/",
