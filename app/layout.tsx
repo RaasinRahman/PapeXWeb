@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Digital Receipts Revolutionized',
   generator: 'v0.dev',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.png',
     apple: '/apple-icon.png'
   },
   metadataBase: new URL('https://papex.app')
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body>{children}</body>
