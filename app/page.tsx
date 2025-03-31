@@ -192,19 +192,33 @@ export default function Home() {
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <div className="relative w-80 h-80">
+                  {/* Base circle with low opacity */}
                   <div className="absolute inset-0 rounded-full border-8 border-white opacity-20"></div>
+                  
+                  {/* Orange section - 26.26% */}
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#ff9933] opacity-80"
-                    style={{ clipPath: "polygon(50% 50%, 50% 0, 26.26% 0, 0 0, 0 50%, 0 100%, 26.26% 100%)" }}
+                    style={{ 
+                      clipPath: "polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%)"
+                    }}
                   ></div>
+                  
+                  {/* Blue section - 20.51% */}
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#44c8e8] opacity-80"
-                    style={{ clipPath: "polygon(50% 50%, 26.26% 0, 46.77% 0, 46.77% 100%, 26.26% 100%)" }}
+                    style={{ 
+                      clipPath: "polygon(50% 50%, 50% 0, 100% 0, 100% 50%)"
+                    }}
                   ></div>
+                  
+                  {/* White section - 53.23% */}
                   <div
                     className="absolute inset-0 rounded-full border-8 border-white"
-                    style={{ clipPath: "polygon(50% 50%, 46.77% 0, 100% 0, 100% 100%, 46.77% 100%)" }}
+                    style={{ 
+                      clipPath: "polygon(50% 50%, 50% 0, 0 0, 0 100%, 50% 100%)"
+                    }}
                   ></div>
+                  
                   <div className="absolute inset-0 flex items-center justify-center flex-col text-center">
                     <p className="text-sm text-white">Core Receipt Based</p>
                     <p className="text-2xl font-bold text-[#ff9933]">26.26%</p>
