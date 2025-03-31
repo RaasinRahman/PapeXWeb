@@ -5,8 +5,7 @@ export const runtime = 'edge';
 export const size = { width: 32, height: 32 };
 export const contentType = 'image/png';
 
-export default async function Icon() {
-  // Use a simple colored square as the favicon
+export default function Icon() {
   return new ImageResponse(
     (
       <div
@@ -20,6 +19,7 @@ export default async function Icon() {
           color: 'white',
           fontSize: 24,
           fontWeight: 'bold',
+          borderRadius: '50%',
         }}
       >
         P
