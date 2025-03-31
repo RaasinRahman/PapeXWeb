@@ -91,37 +91,37 @@ export default function Home() {
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${
+          className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ease-in-out ${
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           {/* Background Overlay */}
           <div 
-            className="absolute inset-0 bg-[#0a3d62]/90 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
           
           {/* Menu Content */}
           <div 
-            className={`absolute right-0 top-0 h-full w-full max-w-sm bg-[#d0e4f4] shadow-xl transform transition-transform duration-300 ease-in-out ${
+            className={`fixed right-0 top-0 h-full w-[85%] max-w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
             <div className="flex flex-col h-full">
               {/* Menu Header */}
-              <div className="flex items-center justify-between p-4 border-b border-[#8ab5d1]">
+              <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-[#d0e4f4]">
                 <Image 
                   src="/logos/transparent.png" 
                   alt="PapeX Logo" 
                   width={120} 
                   height={120}
                   priority
-                  className="h-14 w-auto"
+                  className="h-12 w-auto"
                 />
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="border border-[#0a3d62]/20 bg-white/50 text-[#0a3d62] hover:bg-white"
+                  className="border-none bg-white/80 text-[#0a3d62] hover:bg-white shadow-sm"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <X className="h-5 w-5" />
@@ -130,39 +130,39 @@ export default function Home() {
               </div>
 
               {/* Menu Items */}
-              <div className="flex-1 overflow-y-auto py-6 px-4">
-                <nav className="flex flex-col space-y-6">
+              <div className="flex-1 overflow-y-auto py-6 px-4 bg-white">
+                <nav className="flex flex-col space-y-4">
                   <Link 
                     href="#about" 
-                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Problem & Solution
                   </Link>
                   <Link 
                     href="#business-model" 
-                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Business Model
                   </Link>
                   <Link 
                     href="#market-opportunity" 
-                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Revenue Streams
                   </Link>
                   <Link 
                     href="#traction" 
-                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Milestones
                   </Link>
                   <Link 
                     href="#waitlist" 
-                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Join Waitlist
@@ -171,12 +171,12 @@ export default function Home() {
               </div>
 
               {/* Menu Footer */}
-              <div className="p-4 border-t border-[#8ab5d1]">
+              <div className="p-4 border-t border-gray-200 bg-white">
                 <Link 
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 py-6">
+                  <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-lg px-5 py-4">
                     Contact Us
                   </Button>
                 </Link>
