@@ -99,7 +99,7 @@ export function MainFooter() {
             />
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 order-last md:order-none mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-8 md:mb-0 order-last md:order-none mx-auto">
             <Link href="/#about" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Problem & Solution
             </Link>
@@ -117,7 +117,7 @@ export function MainFooter() {
             </Link>
           </div>
 
-          <div className="mt-6 md:mt-0">
+          <div className="mt-8 md:mt-0">
             <Link href="/contact">
               <Button className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 text-lg">
                 Contact Us
@@ -127,7 +127,7 @@ export function MainFooter() {
         </div>
         
         {/* Social Media Links */}
-        <div className="flex justify-center gap-6 mt-8">
+        <div className="flex justify-center gap-6 mt-10">
           <Link href="https://www.linkedin.com/company/papexreceipts/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
             <Linkedin className="h-6 w-6" />
           </Link>
