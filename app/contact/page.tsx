@@ -40,7 +40,7 @@ const teamMembers: TeamMember[] = [
     fallbackImage: "/profiles/john.svg",
     linkedin: "https://www.linkedin.com/in/jackson-rover-65211521b/",
     email: "jcrover@syr.edu",
-    bio: "Jackson's role at PapeX is to create a full-scale valuation to accurately present the value of PapeX to investors to secure initial financing for the company."
+    bio: "Creating a full-scale valuation to accurately present the value of PapeX to investors to secure initial financing for the company."
   },
   {
     name: "Raasin Rahman",
