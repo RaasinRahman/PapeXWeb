@@ -4,79 +4,12 @@ import { Button } from "@/components/ui/button"
 import { CheckCircle, Clock, DollarSign, BarChart3 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+import { MainNavigation, MainFooter } from "@/components/main-navigation"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#d0e4f4] scroll-smooth">
-      <header className="sticky top-0 z-50 w-full border-b border-[#8ab5d1] backdrop-blur-sm bg-[#d0e4f4]/80">
-        <div className="container mx-auto py-3 px-4 flex items-center justify-between">
-          <div className="flex items-center">
-            <Image 
-              src="/logos/transparent.png" 
-              alt="PapeX Logo" 
-              width={180} 
-              height={180}
-              priority
-              className="h-20 w-auto"
-            />
-          </div>
-          
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList className="gap-1">
-              <NavigationMenuItem>
-                <Link href="#about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50"}>
-                    Problem & Solution
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="#business-model" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50"}>
-                    Business Model
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="#market-opportunity" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50"}>
-                    Revenue Streams
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="#traction" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50"}>
-                    Milestones
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="#waitlist" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50"}>
-                    Join Waitlist
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          
-          <div className="flex items-center gap-3">
-            <Link href="/contact" className="hidden md:block">
-              <Button variant="default" className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5">
-                Contact Us
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <MainNavigation />
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -377,46 +310,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0a3d62] text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-6 md:mb-0">
-              <Image 
-                src="/logos/trans.png"
-                alt="PapeX Logo" 
-                width={80} 
-                height={80}
-                priority
-              />
-            </div>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <Link href="#about" className="text-white hover:text-[#ff9933] transition-colors">
-                Problem & Solution
-              </Link>
-              <Link href="#business-model" className="text-white hover:text-[#ff9933] transition-colors">
-                Business Model
-              </Link>
-              <Link href="#market-opportunity" className="text-white hover:text-[#ff9933] transition-colors">
-                Revenue Streams
-              </Link>
-              <Link href="#traction" className="text-white hover:text-[#ff9933] transition-colors">
-                Milestones
-              </Link>
-              <Link href="#waitlist" className="text-white hover:text-[#ff9933] transition-colors">
-                Join Waitlist
-              </Link>
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5">
-                  Contact Us
-                </Button>
-              </Link>
-            </div>
-          </div>
-          <div className="border-t border-[#1a5980] mt-8 pt-8 text-center text-sm">
-            <p>&copy; {new Date().getFullYear()} PapeX. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <MainFooter />
     </div>
   )
 }

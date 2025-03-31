@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TeamImage } from "@/components/team-image"
+import { MainNavigation, MainFooter } from "@/components/main-navigation"
 
 interface TeamMember {
   name: string
@@ -85,25 +86,7 @@ const teamMembers: TeamMember[] = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#d0e4f4] flex flex-col">
-      <header className="container mx-auto py-4 px-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 w-fit">
-            <Image 
-              src="/logos/transparent.png" 
-              alt="PapeX Logo" 
-              width={80} 
-              height={80}
-              priority
-            />
-          </Link>
-          <Link 
-            href="/"
-            className="px-4 py-2 bg-[#ff9933] text-white rounded-md hover:bg-[#e67e22] transition-all text-sm font-medium"
-          >
-            Back to Home
-          </Link>
-        </div>
-      </header>
+      <MainNavigation />
 
       <main className="flex-1 container mx-auto py-6 px-4">
         <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-4 text-center">Meet the PapeX Team</h1>
@@ -185,11 +168,7 @@ export default function ContactPage() {
         </div>
       </main>
 
-      <footer className="bg-[#0a3d62] text-white py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">&copy; {new Date().getFullYear()} PapeX. All rights reserved.</p>
-        </div>
-      </footer>
+      <MainFooter />
     </div>
   )
 }

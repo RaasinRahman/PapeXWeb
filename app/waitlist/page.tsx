@@ -1,21 +1,14 @@
+'use client'
+
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import WaitlistFormEnhanced from "@/components/waitlist-form-enhanced"
 import Image from "next/image"
+import WaitlistFormEnhanced from "@/components/waitlist-form-enhanced"
+import { MainNavigation, MainFooter } from "@/components/main-navigation"
 
 export default function WaitlistPage() {
   return (
     <div className="min-h-screen bg-[#d0e4f4] flex flex-col">
-      <header className="sticky top-0 z-50 w-full border-b border-[#8ab5d1] backdrop-blur-sm bg-[#d0e4f4]/80">
-        <div className="container mx-auto py-3 px-4">
-          <Link href="/" className="flex items-center gap-2 w-fit group">
-            <div className="flex items-center gap-2">
-              <ArrowLeft className="h-5 w-5 text-[#0a3d62] group-hover:text-[#ff9933] transition-colors" />
-              <span className="text-[#0a3d62] group-hover:text-[#ff9933] font-medium transition-colors">Back to Home</span>
-            </div>
-          </Link>
-        </div>
-      </header>
+      <MainNavigation />
 
       <main className="flex-1 flex items-center justify-center py-12 px-4">
         <div className="max-w-3xl w-full mx-auto">
@@ -93,11 +86,7 @@ export default function WaitlistPage() {
         </div>
       </main>
 
-      <footer className="py-6 text-center text-[#0a3d62] bg-gradient-to-r from-[#0a3d62]/5 to-[#ff9933]/5 backdrop-blur-sm border-t border-white/20">
-        <div className="container mx-auto px-4">
-          <p>&copy; {new Date().getFullYear()} PapeX. All rights reserved.</p>
-        </div>
-      </footer>
+      <MainFooter />
     </div>
   )
 }
