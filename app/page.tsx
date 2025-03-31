@@ -97,90 +97,88 @@ export default function Home() {
         >
           {/* Background Overlay */}
           <div 
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
           
           {/* Menu Content */}
           <div 
-            className={`fixed right-0 top-0 h-full w-[85%] max-w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            className={`fixed right-0 top-0 h-full w-[85%] max-w-[300px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            <div className="flex flex-col h-full">
-              {/* Menu Header */}
-              <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-[#d0e4f4]">
-                <Image 
-                  src="/logos/transparent.png" 
-                  alt="PapeX Logo" 
-                  width={120} 
-                  height={120}
-                  priority
-                  className="h-12 w-auto"
-                />
-                <Button 
-                  variant="outline" 
-                  size="icon" 
-                  className="border-none bg-white/80 text-[#0a3d62] hover:bg-white shadow-sm"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-3 border-b border-gray-200 bg-[#d0e4f4]/50">
+              <Image 
+                src="/logos/transparent.png" 
+                alt="PapeX Logo" 
+                width={100} 
+                height={100}
+                priority
+                className="h-10 w-auto"
+              />
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="border-none bg-white/80 text-[#0a3d62] hover:bg-white shadow-sm h-8 w-8"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X className="h-4 w-4" />
+                <span className="sr-only">Close menu</span>
+              </Button>
+            </div>
 
-              {/* Menu Items */}
-              <div className="flex-1 overflow-y-auto py-6 px-4 bg-white">
-                <nav className="flex flex-col space-y-4">
-                  <Link 
-                    href="#about" 
-                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Problem & Solution
-                  </Link>
-                  <Link 
-                    href="#business-model" 
-                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Business Model
-                  </Link>
-                  <Link 
-                    href="#market-opportunity" 
-                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Revenue Streams
-                  </Link>
-                  <Link 
-                    href="#traction" 
-                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Milestones
-                  </Link>
-                  <Link 
-                    href="#waitlist" 
-                    className="p-3 text-lg font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center gap-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Join Waitlist
-                  </Link>
-                </nav>
-              </div>
-
-              {/* Menu Footer */}
-              <div className="p-4 border-t border-gray-200 bg-white">
+            {/* Menu Items */}
+            <nav className="flex-1 py-2 px-2 overflow-y-auto">
+              <div className="flex flex-col space-y-1">
                 <Link 
-                  href="/contact"
+                  href="#about" 
+                  className="p-2.5 text-base font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-lg px-5 py-4">
-                    Contact Us
-                  </Button>
+                  Problem & Solution
+                </Link>
+                <Link 
+                  href="#business-model" 
+                  className="p-2.5 text-base font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Business Model
+                </Link>
+                <Link 
+                  href="#market-opportunity" 
+                  className="p-2.5 text-base font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Revenue Streams
+                </Link>
+                <Link 
+                  href="#traction" 
+                  className="p-2.5 text-base font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Milestones
+                </Link>
+                <Link 
+                  href="#waitlist" 
+                  className="p-2.5 text-base font-medium text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 rounded-lg transition-all flex items-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Join Waitlist
                 </Link>
               </div>
+            </nav>
+
+            {/* Menu Footer */}
+            <div className="p-3 border-t border-gray-200 bg-white">
+              <Link 
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-lg px-4 py-2.5 h-auto text-sm">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
