@@ -3,7 +3,8 @@ const nextConfig = {
   images: {
     domains: [], // Add any external domains here
     dangerouslyAllowSVG: true,
-    remotePatterns: []
+    remotePatterns: [],
+    unoptimized: true,
   },
   // Configure webpack to handle files from outside the public directory
   webpack: (config, { isServer }) => {
@@ -28,6 +29,12 @@ const nextConfig = {
     // Don't run ESLint during build, we'll handle it separately
     ignoreDuringBuilds: true,
   },
+  // Disable image optimization
+  experimental: {
+    // Add any experimental features here
+  },
+  // Force a trailingSlash to help with relative paths
+  trailingSlash: true,
 };
 
 module.exports = nextConfig; 
