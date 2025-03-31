@@ -158,7 +158,21 @@ export default function Home() {
                   Join Our Waitlist
                 </Button>
               </Link>
-              <Link href="#business-model" className="w-full sm:w-auto">
+              <Link 
+                href="#business-model" 
+                className="w-full sm:w-auto hidden md:block"
+              >
+                <Button
+                  variant="outline"
+                  className="w-full bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
+                >
+                  Learn More
+                </Button>
+              </Link>
+              <Link 
+                href="#about" 
+                className="w-full sm:w-auto md:hidden"
+              >
                 <Button
                   variant="outline"
                   className="w-full bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
@@ -168,16 +182,20 @@ export default function Home() {
               </Link>
             </div>
             <div className="md:hidden flex justify-center pt-8">
-              <Image 
-                src="/logos/transparent.png" 
-                alt="PapeX Logo" 
-                width={120} 
-                height={120}
-                className="h-24 w-auto"
-              />
+              <div className="relative inline-block">
+                <div className="absolute h-32 w-32 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
+                <Image 
+                  src="/icons/Navy Primary/Navy-Carolina.png"
+                  alt="PapeX Logo" 
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
-          <div className="md:w-1/2 relative">
+          <div className="md:w-1/2 relative hidden md:block">
             <div className="relative h-80 w-full flex items-center justify-center">
               <div className="relative inline-block">
                 <div className="absolute h-40 w-40 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
