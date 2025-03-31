@@ -16,3 +16,7 @@ PapeX is developing a digital platform that eliminates the need for physical, em
 ## Development
 
 This project uses Next.js and is deployed on Vercel.
+
+## Contact
+
+For questions or support, contact us at raasinr@gmail.com.
