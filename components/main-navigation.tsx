@@ -98,7 +98,8 @@ export function MainFooter() {
               priority
             />
           </div>
-          <div className="flex flex-col md:flex-row gap-8 items-center">
+
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 order-last md:order-none mx-auto">
             <Link href="/#about" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Problem & Solution
             </Link>
@@ -114,6 +115,9 @@ export function MainFooter() {
             <Link href="/waitlist" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Join Waitlist
             </Link>
+          </div>
+
+          <div className="mt-6 md:mt-0">
             <Link href="/contact">
               <Button className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 text-lg">
                 Contact Us
@@ -123,8 +127,8 @@ export function MainFooter() {
         </div>
         
         {/* Social Media Links */}
-        <div className="flex justify-center mt-8 gap-6">
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
+        <div className="flex justify-center gap-6 mt-8">
+          <Link href="https://www.linkedin.com/company/papexreceipts/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
             <Linkedin className="h-6 w-6" />
           </Link>
           <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
@@ -133,7 +137,7 @@ export function MainFooter() {
           <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
             <Facebook className="h-6 w-6" />
           </Link>
-          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
+          <Link href="https://www.instagram.com/papex_receipts?igsh=ZjVkbm80eWprcTgz" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-colors">
             <Instagram className="h-6 w-6" />
           </Link>
         </div>
