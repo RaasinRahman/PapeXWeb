@@ -1,20 +1,11 @@
 {
   "routes": [
-    { "src": "/favicon.ico", "dest": "/icons/Orange Primary/Orange-Navy.png" },
-    { "src": "/favicon.png", "dest": "/icons/Orange Primary/Orange-Navy.png" }
+    { "src": "/favicon.ico", "dest": "/papex-favicon.ico" },
+    { "src": "/favicon.png", "dest": "/papex-favicon.png" }
   ],
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/icons/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

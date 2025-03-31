@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Digital Receipts Revolutionized',
   generator: 'v0.dev',
   icons: {
-    icon: '/icons/Orange Primary/Orange-Navy.png'
+    icon: '/papex-favicon.png'
   }
 }
 
@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icons/Orange Primary/Orange-Navy.png" />
-        <link rel="shortcut icon" href="/icons/Orange Primary/Orange-Navy.png" />
+        <link rel="icon" href="/papex-favicon.png" />
+        <link rel="shortcut icon" href="/papex-favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>{children}</body>
