@@ -1,7 +1,10 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Clock, DollarSign, BarChart3, Menu } from "lucide-react"
+import { CheckCircle, Clock, DollarSign, BarChart3, Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,6 +14,8 @@ import {
 } from "@/components/ui/navigation-menu"
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <div className="flex flex-col min-h-screen bg-[#d0e4f4] scroll-smooth">
       <header className="sticky top-0 z-50 w-full border-b border-[#8ab5d1] backdrop-blur-sm bg-[#d0e4f4]/80">
@@ -67,15 +72,72 @@ export default function Home() {
           </NavigationMenu>
           
           <div className="flex items-center gap-3">
-            <Link href="/contact">
+            <Link href="/contact" className="hidden md:block">
               <Button variant="default" className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5">
                 Contact Us
               </Button>
             </Link>
-            <Button variant="outline" size="icon" className="md:hidden border border-[#0a3d62]/20 bg-white/50 text-[#0a3d62] hover:bg-white">
-              <Menu className="h-5 w-5" />
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className="md:hidden border border-[#0a3d62]/20 bg-white/50 text-[#0a3d62] hover:bg-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               <span className="sr-only">Menu</span>
             </Button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden fixed inset-0 bg-[#d0e4f4] z-40 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col space-y-6">
+              <Link 
+                href="#about" 
+                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Problem & Solution
+              </Link>
+              <Link 
+                href="#business-model" 
+                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Business Model
+              </Link>
+              <Link 
+                href="#market-opportunity" 
+                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Revenue Streams
+              </Link>
+              <Link 
+                href="#traction" 
+                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Milestones
+              </Link>
+              <Link 
+                href="#waitlist" 
+                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Join Waitlist
+              </Link>
+              <Link 
+                href="/contact"
+                className="mt-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 py-6">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -88,23 +150,31 @@ export default function Home() {
               Revolutionizing Digital Receipts
             </h1>
             <p className="text-xl text-[#0a3d62] md:pr-12">
-              PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts,
-              seamlessly bridging the gap between retail transactions and financial management.
+              PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/waitlist">
-                <Button className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-6 py-6 h-auto">
+              <Link href="/waitlist" className="w-full sm:w-auto">
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-6 py-6 h-auto">
                   Join Our Waitlist
                 </Button>
               </Link>
-              <Link href="#business-model">
+              <Link href="#business-model" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
+                  className="w-full bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
                 >
                   Learn More
                 </Button>
               </Link>
+            </div>
+            <div className="md:hidden flex justify-center pt-8">
+              <Image 
+                src="/logos/transparent.png" 
+                alt="PapeX Logo" 
+                width={120} 
+                height={120}
+                className="h-24 w-auto"
+              />
             </div>
           </div>
           <div className="md:w-1/2 relative">
@@ -113,7 +183,7 @@ export default function Home() {
                 <div className="absolute h-40 w-40 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
                 <div className="w-auto h-auto flex items-center justify-center">
                   <Image 
-                    src={`/icons/Navy Primary/Navy-Carolina.png?t=${Date.now()}`}
+                    src="/icons/Navy Primary/Navy-Carolina.png"
                     alt="PapeX Logo" 
                     width={140}
                     height={140}
@@ -239,29 +309,29 @@ export default function Home() {
                   <div className="absolute inset-0 rounded-full border-8 border-white opacity-20"></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#ff9933] opacity-80"
-                    style={{ clipPath: "polygon(0 0, 57% 0, 57% 100%, 0 100%)" }}
+                    style={{ clipPath: "polygon(0 0, 26.26% 0, 26.26% 100%, 0 100%)" }}
                   ></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-[#44c8e8] opacity-80"
-                    style={{ clipPath: "polygon(57% 0, 75% 0, 75% 100%, 57% 100%)" }}
+                    style={{ clipPath: "polygon(26.26% 0, 46.77% 0, 46.77% 100%, 26.26% 100%)" }}
                   ></div>
                   <div
                     className="absolute inset-0 rounded-full border-8 border-white"
-                    style={{ clipPath: "polygon(75% 0, 100% 0, 100% 100%, 75% 100%)" }}
+                    style={{ clipPath: "polygon(46.77% 0, 100% 0, 100% 100%, 46.77% 100%)" }}
                   ></div>
                   <div className="absolute inset-0 flex items-center justify-center flex-col text-center">
-                    <p className="text-sm text-white">Core receipt based revenue</p>
-                    <p className="text-2xl font-bold text-[#ff9933]">57.1%</p>
+                    <p className="text-sm text-white">Core Receipt Based</p>
+                    <p className="text-2xl font-bold text-[#ff9933]">26.26%</p>
                     
                     <div className="h-1 w-16 bg-white my-2"></div>
                     
-                    <p className="text-sm text-white">Data monetization</p>
-                    <p className="text-2xl font-bold text-[#44c8e8]">17.9%</p>
+                    <p className="text-sm text-white">B2B Subscription Service</p>
+                    <p className="text-2xl font-bold text-[#44c8e8]">20.51%</p>
                     
                     <div className="h-1 w-16 bg-white my-2"></div>
                     
-                    <p className="text-sm text-white">B2B integrations</p>
-                    <p className="text-2xl font-bold text-white">25.0%</p>
+                    <p className="text-sm text-white">Data Monetization</p>
+                    <p className="text-2xl font-bold text-white">53.23%</p>
                   </div>
                 </div>
               </div>
@@ -340,7 +410,7 @@ export default function Home() {
                 </div>
                 <div className="flex-shrink-0 ml-2">
                   <Image 
-                    src={`/logos/trans.png?t=${Date.now()}`}
+                    src="/logos/trans.png"
                     alt="PapeX Logo" 
                     width={48} 
                     height={48}
@@ -358,7 +428,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-6 md:mb-0">
               <Image 
-                src={`/logos/trans.png?t=${Date.now()}`}
+                src="/logos/trans.png"
                 alt="PapeX Logo" 
                 width={80} 
                 height={80}
