@@ -108,17 +108,19 @@ export default function Home() {
             </div>
           </div>
           <div className="md:w-1/2 relative">
-            <div className="relative h-80 w-full">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image 
-                  src={`/icons/Navy Primary/Navy-Carolina.png?t=${Date.now()}`}
-                  alt="PapeX Logo" 
-                  width={180} 
-                  height={180} 
-                  className="z-10"
-                  priority
-                />
-                <div className="absolute h-40 w-40 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20"></div>
+            <div className="relative h-80 w-full flex items-center justify-center">
+              <div className="relative inline-block">
+                <div className="absolute h-40 w-40 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
+                <div className="w-auto h-auto flex items-center justify-center">
+                  <Image 
+                    src={`/icons/Navy Primary/Navy-Carolina.png?t=${Date.now()}`}
+                    alt="PapeX Logo" 
+                    width={140}
+                    height={140}
+                    className="sm:w-[180px] sm:h-[180px] w-[120px] h-[120px] object-contain"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
