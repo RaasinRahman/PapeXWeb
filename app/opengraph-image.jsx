@@ -1,8 +1,11 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
+export const alt = 'PapeX - Digital Receipts Revolutionized';
+export const contentType = 'image/png';
+export const size = { width: 1200, height: 630 };
 
-export async function GET() {
+export default async function Image() {
   return new ImageResponse(
     (
       <div
@@ -13,29 +16,39 @@ export async function GET() {
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          padding: 40,
         }}
       >
-        <img
-          src="https://papex.app/icons/Orange Primary/Orange-Navy.png"
-          alt="PapeX Logo"
-          width={200}
-          height={200}
-        />
         <div
           style={{
-            fontSize: 60,
-            marginLeft: 20,
-            color: '#0a3d62',
-            fontWeight: 'bold',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          PapeX
+          <div
+            style={{
+              fontSize: 80,
+              color: '#0a3d62',
+              fontWeight: 'bold',
+              marginBottom: 20,
+            }}
+          >
+            PapeX
+          </div>
+          <div
+            style={{
+              fontSize: 40,
+              color: '#ff9933',
+              textAlign: 'center',
+            }}
+          >
+            Digital Receipts Revolutionized
+          </div>
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    }
+    size
   );
 } 
