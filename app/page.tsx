@@ -90,53 +90,97 @@ export default function Home() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden fixed inset-0 bg-[#d0e4f4] z-40 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col space-y-6">
-              <Link 
-                href="#about" 
-                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Problem & Solution
-              </Link>
-              <Link 
-                href="#business-model" 
-                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Business Model
-              </Link>
-              <Link 
-                href="#market-opportunity" 
-                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Revenue Streams
-              </Link>
-              <Link 
-                href="#traction" 
-                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Milestones
-              </Link>
-              <Link 
-                href="#waitlist" 
-                className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Join Waitlist
-              </Link>
-              <Link 
-                href="/contact"
-                className="mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 py-6">
-                  Contact Us
+        <div 
+          className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          {/* Background Overlay */}
+          <div 
+            className="absolute inset-0 bg-[#0a3d62]/90 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          ></div>
+          
+          {/* Menu Content */}
+          <div 
+            className={`absolute right-0 top-0 h-full w-full max-w-sm bg-[#d0e4f4] shadow-xl transform transition-transform duration-300 ease-in-out ${
+              isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            <div className="flex flex-col h-full">
+              {/* Menu Header */}
+              <div className="flex items-center justify-between p-4 border-b border-[#8ab5d1]">
+                <Image 
+                  src="/logos/transparent.png" 
+                  alt="PapeX Logo" 
+                  width={120} 
+                  height={120}
+                  priority
+                  className="h-14 w-auto"
+                />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="border border-[#0a3d62]/20 bg-white/50 text-[#0a3d62] hover:bg-white"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <X className="h-5 w-5" />
+                  <span className="sr-only">Close menu</span>
                 </Button>
-              </Link>
+              </div>
+
+              {/* Menu Items */}
+              <div className="flex-1 overflow-y-auto py-6 px-4">
+                <nav className="flex flex-col space-y-6">
+                  <Link 
+                    href="#about" 
+                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Problem & Solution
+                  </Link>
+                  <Link 
+                    href="#business-model" 
+                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Business Model
+                  </Link>
+                  <Link 
+                    href="#market-opportunity" 
+                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Revenue Streams
+                  </Link>
+                  <Link 
+                    href="#traction" 
+                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Milestones
+                  </Link>
+                  <Link 
+                    href="#waitlist" 
+                    className="text-xl text-[#0a3d62] hover:text-[#ff9933] transition-colors flex items-center gap-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Join Waitlist
+                  </Link>
+                </nav>
+              </div>
+
+              {/* Menu Footer */}
+              <div className="p-4 border-t border-[#8ab5d1]">
+                <Link 
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 py-6">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
