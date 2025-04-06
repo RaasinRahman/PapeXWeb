@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        barlow: ["var(--font-barlow)", "Arial", "sans-serif"],
+        gloock: ["var(--font-gloock)", "Georgia", "serif"],
+      },
     },
   },
   plugins: [],

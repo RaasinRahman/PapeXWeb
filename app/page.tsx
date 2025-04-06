@@ -15,7 +15,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="container mx-auto py-16 px-4 md:py-24 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold text-[#0a3d62] leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#0a3d62] leading-tight font-gloock">
               Revolutionizing Digital Receipts
             </h1>
             <p className="text-xl text-[#0a3d62] md:pr-12">
@@ -88,7 +88,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/2">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">The Problem</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">The Problem</h2>
                 <p className="text-lg mb-6">
                   Businesses annually spend on average, between $3B - $6B on receipt paper in the U.S. alone, and that
                   excludes printer and ink costs. These costs are not only monetary but also waste valuable time at
@@ -98,21 +98,21 @@ export default function Home() {
                   <div className="flex items-start gap-4">
                     <DollarSign className="h-8 w-8 text-[#ff9933] mt-1" />
                     <div>
-                      <h3 className="font-bold text-xl mb-2">Costly</h3>
+                      <h3 className="font-bold text-xl mb-2 font-gloock">Costly</h3>
                       <p>Billions spent annually on paper receipts and related costs</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <Clock className="h-8 w-8 text-[#ff9933] mt-1" />
                     <div>
-                      <h3 className="font-bold text-xl mb-2">Time-Consuming</h3>
+                      <h3 className="font-bold text-xl mb-2 font-gloock">Time-Consuming</h3>
                       <p>Wastes valuable time at checkout for both businesses and customers</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="md:w-1/2 bg-[#0c4b76] p-8 rounded-lg">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Solution</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">Our Solution</h2>
                 <p className="text-lg mb-6">
                   PapeX is developing a digital platform that will eliminate the need for physical, email, or text
                   receipts, seamlessly bridging the gap between the final stages of the retail transaction process and
@@ -138,12 +138,12 @@ export default function Home() {
         {/* Business Model Section */}
         <section id="business-model" className="scroll-mt-[15vh] py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock">
               Win-Win-Win Business Model
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4">Win for POS Vendors</h3>
+                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for POS Vendors</h3>
                 <p className="text-[#0a3d62] mb-6">
                   Point-of-Sale (POS) vendors will generate new revenue streams through our integration.
                 </p>
@@ -153,7 +153,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4">Win for Merchants</h3>
+                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Merchants</h3>
                 <p className="text-[#0a3d62] mb-6">
                   Merchants will save time, money, and reduce waste by eliminating physical receipts.
                 </p>
@@ -163,7 +163,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4">Win for Customers</h3>
+                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Customers</h3>
                 <p className="text-[#0a3d62] mb-6">
                   Individuals or entities receiving receipts will benefit from faster checkouts and more efficient
                   financial and expense management.
@@ -180,7 +180,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="md:w-1/2">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Market Opportunity</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-gloock">Market Opportunity</h2>
                 <p className="text-lg text-white mb-8">
                   PapeX targets anyone who receives or issues receipts, including both brick-and-mortar businesses and
                   online retailers. We will generate revenue through a combination of pay-per-print and
@@ -242,7 +242,7 @@ export default function Home() {
         {/* Traction Section */}
         <section id="traction" className="scroll-mt-[15vh] py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12">Traction & Milestones</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock">Traction & Milestones</h2>
             <div className="max-w-3xl mx-auto">
               <div className="relative">
                 <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[#ff9933]"></div>
@@ -251,7 +251,7 @@ export default function Home() {
                   <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2">Clover POS Integration</h3>
+                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Clover POS Integration</h3>
                   <p className="text-[#0a3d62]">
                     Successfully developed an almost fully functional integration for the Clover POS system, relying
                     solely on a dedicated group of students with support from professionals and advisors.
@@ -262,7 +262,7 @@ export default function Home() {
                   <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
                     <BarChart3 className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2">Growing Waitlist</h3>
+                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Growing Waitlist</h3>
                   <p className="text-[#0a3d62]">
                     Market interest is evident, with a growing waitlist of potential customers eager to adopt the
                     solution.
@@ -273,7 +273,7 @@ export default function Home() {
                   <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
                     <DollarSign className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2">Pitch Competition Winner</h3>
+                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Pitch Competition Winner</h3>
                   <p className="text-[#0a3d62]">
                     PapeX gained recognition by winning a pitch competition judged by the top 50 fastest-growing
                     Syracuse alumni entrepreneurs, securing $6,000 in funding to further development.
@@ -287,7 +287,7 @@ export default function Home() {
         {/* Waitlist Section */}
         <section id="waitlist" className="scroll-mt-[15vh] bg-[#0a3d62] text-white py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Show Your Support!</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">Show Your Support!</h2>
             <p className="text-xl max-w-2xl mx-auto mb-12">
               PapeX is currently building our waitlist as we seek investors. There's no obligation or commitment on your part, but if you're interested click here!
             </p>
