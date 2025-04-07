@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://papex.io',
+    url: 'https://papex.app',
     title: 'PapeX | Digital Receipts Revolutionized',
     description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
     siteName: 'PapeX',
