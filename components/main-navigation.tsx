@@ -63,6 +63,13 @@ export function MainNavigation() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link href="/survey" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50 font-semibold text-lg"}>
+                  Take Our Survey
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href="/waitlist" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50 font-semibold text-lg"}>
                   Join Waitlist
@@ -111,6 +118,9 @@ export function MainFooter() {
             </Link>
             <Link href="/#traction" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Milestones
+            </Link>
+            <Link href="/survey" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
+              Take Our Survey
             </Link>
             <Link href="/waitlist" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Join Waitlist
