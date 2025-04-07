@@ -27,6 +27,11 @@ export default function Home() {
                   Join Our Waitlist
                 </Button>
               </Link>
+              <Link href="/survey" className="w-full sm:w-auto">
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-6 py-6 h-auto">
+                  Take Our Survey
+                </Button>
+              </Link>
               <Link 
                 href="#business-model" 
                 className="w-full sm:w-auto hidden md:block"
@@ -294,8 +299,13 @@ export default function Home() {
 
             <div className="max-w-md mx-auto">
               <Link href="/waitlist">
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-6 py-6 h-auto">
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-6 py-6 h-auto mb-4">
                   Join Our Waitlist
+                </Button>
+              </Link>
+              <Link href="/survey">
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-6 py-6 h-auto">
+                  Take Our Survey
                 </Button>
               </Link>
             </div>
