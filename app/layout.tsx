@@ -32,9 +32,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icons/Navy Primary/Navy-Carolina.png', sizes: 'any' }
     ],
-    shortcut: [{ url: '/icons/Navy Primary/Navy-Carolina.png' }],
+    shortcut: [{ url: '/favicon.ico' }],
     apple: [{ url: '/icons/Navy Primary/Navy-Carolina.png' }],
     other: [
       {
@@ -53,9 +54,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${gloock.variable}`}>
       <head>
-        <link rel="icon" href="/icons/Navy Primary/Navy-Carolina.png" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icons/Navy Primary/Navy-Carolina.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
       </head>
       <body className="font-barlow">{children}</body>
     </html>
