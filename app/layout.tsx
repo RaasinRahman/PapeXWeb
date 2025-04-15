@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'PapeX',
     images: [
       {
-        url: '/icons/Navy Primary/Navy-Carolina.png',
+        url: '/apple-icon.png',
         width: 800,
         height: 600,
         alt: 'PapeX Logo'
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PapeX | Digital Receipts Revolutionized',
     description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
-    images: ['/icons/Navy Primary/Navy-Carolina.png']
+    images: ['/apple-icon.png']
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icons/Navy Primary/Navy-Carolina.png', sizes: 'any' }
+      { url: '/papex-favicon.ico', sizes: 'any' },
+      { url: '/papex-favicon.png', type: 'image/png' }
     ],
-    shortcut: [{ url: '/favicon.ico' }],
-    apple: [{ url: '/icons/Navy Primary/Navy-Carolina.png' }],
+    shortcut: [{ url: '/papex-favicon.ico' }],
+    apple: [{ url: '/apple-icon.png' }],
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/icons/Navy Primary/Navy-Carolina.png',
+        url: '/apple-icon.png',
       },
     ],
   }
@@ -54,13 +54,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${gloock.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/icons/Navy Primary/Navy-Carolina.png" />
+        <link rel="icon" href="/papex-favicon.ico" sizes="any" />
+        <link rel="icon" href="/papex-favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
       </head>
       <body className="font-barlow">{children}</body>
     </html>
