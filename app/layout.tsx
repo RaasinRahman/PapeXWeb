@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'PapeX',
     images: [
       {
-        url: '/apple-icon.png',
+        url: '/icons/Navy Primary/Navy-Carolina.png',
         width: 800,
         height: 600,
         alt: 'PapeX Logo'
@@ -28,19 +28,18 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PapeX | Digital Receipts Revolutionized',
     description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
-    images: ['/apple-icon.png']
+    images: ['/icons/Navy Primary/Navy-Carolina.png']
   },
   icons: {
     icon: [
-      { url: '/papex-favicon.ico', sizes: 'any' },
-      { url: '/papex-favicon.png', type: 'image/png' }
+      { url: '/icons/Navy Primary/Navy-Carolina.png', sizes: 'any' }
     ],
-    shortcut: [{ url: '/papex-favicon.ico' }],
-    apple: [{ url: '/apple-icon.png' }],
+    shortcut: [{ url: '/icons/Navy Primary/Navy-Carolina.png' }],
+    apple: [{ url: '/icons/Navy Primary/Navy-Carolina.png' }],
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/apple-icon.png',
+        url: '/icons/Navy Primary/Navy-Carolina.png',
       },
     ],
   }
@@ -54,9 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${gloock.variable}`}>
       <head>
-        <link rel="icon" href="/papex-favicon.ico" sizes="any" />
-        <link rel="icon" href="/papex-favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="icon" href="/icons/Navy Primary/Navy-Carolina.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/icons/Navy Primary/Navy-Carolina.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="font-barlow">{children}</body>
