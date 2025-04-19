@@ -20,7 +20,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Nicolas Courbage",
-    role: "CEO",
+    role: "Founder",
     image: "/profiles/nico_courbage.jpeg",
     fallbackImage: "/profiles/nicolas.svg",
     linkedin: "https://www.linkedin.com/in/nicolas-courbage-051912123/",
@@ -29,7 +29,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Michael Khoury",
-    role: "COO",
+    role: "Co-founder",
     image: "/profiles/michael_khoury.jpeg",
     fallbackImage: "/profiles/michael.svg",
     linkedin: "https://www.linkedin.com/in/michael-khoury-194b82240/",
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Jackson Rover",
-    role: "CFO",
+    role: "Finance",
     image: "/profiles/jackson_rover.jpeg",
     fallbackImage: "/profiles/john.svg",
     linkedin: "https://www.linkedin.com/in/jackson-rover-65211521b/",
@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Raasin Rahman",
-    role: "CTO",
+    role: "Technology",
     image: "/profiles/raasin_rahman.jpeg",
     fallbackImage: "/profiles/raasin.svg",
     linkedin: "https://www.linkedin.com/in/raasin/",
@@ -56,7 +56,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Lia Courbage",
-    role: "Head of Marketing and Branding",
+    role: "Marketing",
     image: "/profiles/lia_courbage.jpeg",
     fallbackImage: "/profiles/lia.svg",
     linkedin: "https://www.linkedin.com/in/lia-courbage-102971165/",
