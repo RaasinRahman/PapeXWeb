@@ -327,40 +327,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section id="team" className="scroll-mt-[15vh] py-16 md:py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-8 font-gloock">Meet Our Team</h2>
-            <p className="text-lg text-[#0a3d62] text-center max-w-3xl mx-auto mb-12">
-              The passionate minds behind PapeX working to revolutionize digital receipts and transform financial management.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Team Member - Krutartha Nagesh */}
-              <div className="bg-[#d0e4f4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
-                  <Image
-                    src="/profiles/Kru.jpeg"
-                    alt="Krutartha Nagesh"
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Krutartha Nagesh</h3>
-                  <p className="text-[#0a3d62] mb-4">Chief Technology Officer</p>
-                  <p className="text-[#0a3d62]">
-                    Leads and oversees the development of PapeX's core technology, focusing on scalable backend systems and a seamless end-user experience.
-                  </p>
-                </div>
-              </div>
-              
-              {/* We can add more team members here in the future */}
-            </div>
-          </div>
-        </section>
-
         {/* Waitlist Section */}
         <section id="waitlist" className="scroll-mt-[15vh] bg-[#0a3d62] text-white py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
