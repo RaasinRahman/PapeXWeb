@@ -37,15 +37,6 @@ const teamMembers: TeamMember[] = [
     bio: "Operations and legal executive responsible for ensuring smooth functionality of all departments of the company."
   },
   {
-    name: "Jackson Rover",
-    role: "Finance",
-    image: "/profiles/jackson_rover.jpeg",
-    fallbackImage: "/profiles/john.svg",
-    linkedin: "https://www.linkedin.com/in/jackson-rover-65211521b/",
-    email: "jcrover@syr.edu",
-    bio: "Creating a full-scale valuation to accurately present the value of PapeX to investors to secure initial financing for the company."
-  },
-  {
     name: "Raasin Rahman",
     role: "Technology",
     image: "/profiles/raasin_rahman.jpeg",
@@ -62,15 +53,6 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/krutarthanagesh/",
     email: "krutarthanagesh@gmail.com",
     bio: "Leads and oversees the development of PapeX's core technology, focusing on scalable backend systems and a seamless end-user experience."
-  },
-  {
-    name: "Lia Courbage",
-    role: "Marketing",
-    image: "/profiles/lia_courbage.jpeg",
-    fallbackImage: "/profiles/lia.svg",
-    linkedin: "https://www.linkedin.com/in/lia-courbage-102971165/",
-    email: "lia@courbage.net",
-    bio: "Product designer and operations manager specializing in developing user-centered designs, optimizing processes, and driving pre-launch marketing strategies."
   },
   {
     name: "Magali Courbage",
