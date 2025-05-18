@@ -55,6 +55,15 @@ const teamMembers: TeamMember[] = [
     bio: "Leading the technical development of the PapeX application "
   },
   {
+    name: "Krutartha Nagesh",
+    role: "Technology",
+    image: "/profiles/Kru.jpeg",
+    fallbackImage: "/profiles/placeholder.svg",
+    linkedin: "https://www.linkedin.com/in/krutarthanagesh/",
+    email: "krutarthanagesh@gmail.com",
+    bio: "Leads and oversees the development of PapeX's core technology, focusing on scalable backend systems and a seamless end-user experience."
+  },
+  {
     name: "Lia Courbage",
     role: "Marketing",
     image: "/profiles/lia_courbage.jpeg",
