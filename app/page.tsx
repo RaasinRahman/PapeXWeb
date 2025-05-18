@@ -97,16 +97,33 @@ export default function Home() {
             <p className="text-lg text-[#0a3d62] text-center max-w-3xl mx-auto mb-10">
               Watch how PapeX streamlines the receipt process, saving time for both businesses and customers while eliminating paper waste.
             </p>
-            <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
-              <div className="aspect-[9/16] max-w-sm mx-auto">
-                <iframe
-                  src="https://www.youtube.com/embed/P-9kLv4Kj10"
-                  title="PapeX Demo"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  frameBorder="0"
-                ></iframe>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* YouTube Video */}
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <div className="aspect-[9/16] max-w-sm mx-auto">
+                  <iframe
+                    src="https://www.youtube.com/embed/P-9kLv4Kj10"
+                    title="PapeX Demo"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    frameBorder="0"
+                  ></iframe>
+                </div>
+              </div>
+              
+              {/* Instagram Reel */}
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <div className="aspect-[9/16] max-w-sm mx-auto">
+                  <iframe
+                    src="https://www.instagram.com/reel/DJkVQCuhdQq/embed"
+                    title="PapeX Instagram Demo"
+                    className="w-full h-full"
+                    allowFullScreen
+                    frameBorder="0"
+                    scrolling="no"
+                  ></iframe>
+                </div>
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 md:gap-0">
