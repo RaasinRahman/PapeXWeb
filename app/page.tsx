@@ -88,6 +88,44 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Video Demo Section */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-8 font-gloock">
+              See PapeX in Action
+            </h2>
+            <p className="text-lg text-[#0a3d62] text-center max-w-3xl mx-auto mb-10">
+              Watch how PapeX streamlines the receipt process, saving time for both businesses and customers while eliminating paper waste.
+            </p>
+            <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+              <div className="aspect-[9/16] max-w-sm mx-auto">
+                <iframe
+                  src="https://www.youtube.com/embed/P-9kLv4Kj10"
+                  title="PapeX Demo"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                ></iframe>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 md:gap-0">
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium">
+                <CheckCircle className="h-5 w-5" />
+                <span>No more paper receipts</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8">
+                <CheckCircle className="h-5 w-5" />
+                <span>Faster checkout experience</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8">
+                <CheckCircle className="h-5 w-5" />
+                <span>Easy expense tracking</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Problem Section */}
         <section id="about" className="scroll-mt-[15vh] bg-[#0a3d62] text-white py-16 md:py-24">
           <div className="container mx-auto px-4">
