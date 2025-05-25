@@ -4,17 +4,40 @@ import { barlow, gloock } from './fonts'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title: 'PapeX | Digital Receipts Revolutionized',
-  description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
+  title: 'PapeX | Digital Receipts Revolutionized - Paperless Receipt Solutions',
+  description: 'PapeX revolutionizes digital receipts by eliminating paper waste and streamlining financial management. Our platform integrates with POS systems to deliver instant digital receipts, saving businesses money while helping the environment. Join the paperless revolution with PapeX.',
   generator: 'Next.js',
-  keywords: ['digital receipts', 'paperless receipts', 'electronic receipts', 'financial management', 'eco-friendly', 'retail technology', 'POS integration', 'expense tracking'],
-  authors: [{ name: 'PapeX Team' }],
+  keywords: [
+    'PapeX', 'papex', 'digital receipts', 'paperless receipts', 'electronic receipts', 
+    'receipt management', 'financial management', 'eco-friendly receipts', 'green technology',
+    'retail technology', 'POS integration', 'expense tracking', 'receipt app', 
+    'digital receipt platform', 'paperless transactions', 'receipt digitization',
+    'sustainable business', 'receipt automation', 'mobile receipts', 'cloud receipts',
+    'receipt storage', 'expense management', 'business receipts', 'retail receipts'
+  ],
+  authors: [{ name: 'PapeX Team' }, { name: 'Nicolas Courbage' }, { name: 'Michael Khoury' }],
+  creator: 'PapeX Team',
+  publisher: 'PapeX',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code-here',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://papex.app',
-    title: 'PapeX | Digital Receipts Revolutionized',
-    description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
+    title: 'PapeX | Digital Receipts Revolutionized - Paperless Receipt Solutions',
+    description: 'PapeX revolutionizes digital receipts by eliminating paper waste and streamlining financial management. Our platform integrates with POS systems to deliver instant digital receipts, saving businesses money while helping the environment.',
     siteName: 'PapeX',
     images: [
       {
@@ -34,10 +57,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PapeX | Digital Receipts Revolutionized',
-    description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
+    title: 'PapeX | Digital Receipts Revolutionized - Paperless Receipt Solutions',
+    description: 'PapeX revolutionizes digital receipts by eliminating paper waste and streamlining financial management. Our platform integrates with POS systems to deliver instant digital receipts.',
     images: ['https://papex.app/blog/blog_image.png'],
-    creator: '@papex_receipts'
+    creator: '@papex_receipts',
+    site: '@papex_receipts'
+  },
+  alternates: {
+    canonical: 'https://papex.app',
   },
   icons: {
     icon: [
