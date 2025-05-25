@@ -18,7 +18,14 @@ export const metadata: Metadata = {
     siteName: 'PapeX',
     images: [
       {
-        url: '/apple-icon.png',
+        url: 'https://papex.app/blog/blog_image.png',
+        width: 1200,
+        height: 630,
+        alt: 'PapeX - The Smarter Way to Do Receipts',
+        type: 'image/png'
+      },
+      {
+        url: 'https://papex.app/apple-icon.png',
         width: 800,
         height: 600,
         alt: 'PapeX Logo'
@@ -29,7 +36,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PapeX | Digital Receipts Revolutionized',
     description: 'PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.',
-    images: ['/apple-icon.png']
+    images: ['https://papex.app/blog/blog_image.png'],
+    creator: '@papex_receipts'
   },
   icons: {
     icon: [
