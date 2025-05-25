@@ -120,7 +120,7 @@ export function MainNavigation() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-[#8ab5d1] shadow-xl z-40">
+        <div className="md:hidden bg-white border-b border-[#8ab5d1] shadow-xl">
           <div className="container mx-auto px-4 py-6 space-y-4">
             <Link 
               href={pathname === "/" ? "#about" : "/#about"}
