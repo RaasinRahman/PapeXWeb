@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { barlow, gloock } from './fonts'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   title: 'PapeX | Digital Receipts Revolutionized',
@@ -59,7 +60,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="font-barlow">{children}</body>
+      <body className="font-barlow">
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
