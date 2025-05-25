@@ -27,7 +27,7 @@ export default function BlogPost() {
               src="/blog/blog_image.png"
               alt="The Hidden Cost of Paper Receipts"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
             />
           </div>

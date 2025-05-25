@@ -102,13 +102,17 @@ export function MainNavigation() {
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-[#0a3d62] hover:text-[#ff9933] transition-colors"
+            className="p-2 text-[#0a3d62] hover:text-[#ff9933] transition-colors focus:outline-none"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-7 w-7" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <div className="flex flex-col space-y-1">
+                <div className="w-6 h-0.5 bg-[#0a3d62] transition-all"></div>
+                <div className="w-6 h-0.5 bg-[#0a3d62] transition-all"></div>
+                <div className="w-6 h-0.5 bg-[#0a3d62] transition-all"></div>
+              </div>
             )}
           </button>
         </div>
@@ -116,60 +120,60 @@ export function MainNavigation() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[#8ab5d1] shadow-lg">
-          <div className="container mx-auto px-4 py-4 space-y-3">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-[#8ab5d1] shadow-xl z-40">
+          <div className="container mx-auto px-4 py-6 space-y-4">
             <Link 
               href={pathname === "/" ? "#about" : "/#about"}
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Problem & Solution
             </Link>
             <Link 
               href={pathname === "/" ? "#business-model" : "/#business-model"}
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Business Model
             </Link>
             <Link 
               href={pathname === "/" ? "#market-opportunity" : "/#market-opportunity"}
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Revenue Streams
             </Link>
             <Link 
               href={pathname === "/" ? "#traction" : "/#traction"}
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Milestones
             </Link>
             <Link 
               href="/blog"
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
             </Link>
             <Link 
               href="/survey"
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Take Our Survey
             </Link>
             <Link 
               href="/waitlist"
-              className="block py-2 text-[#0a3d62] hover:text-[#ff9933] font-semibold transition-colors"
+              className="block py-3 px-2 text-[#0a3d62] hover:text-[#ff9933] hover:bg-[#d0e4f4]/30 font-semibold text-lg transition-all rounded-md"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Join Waitlist
             </Link>
-            <div className="pt-3 border-t border-[#8ab5d1]/30">
+            <div className="pt-4 border-t border-[#8ab5d1]/30 mt-4">
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-5 py-3">
+                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-lg border-none rounded-full px-6 py-4 text-lg">
                   Contact Us
                 </Button>
               </Link>
