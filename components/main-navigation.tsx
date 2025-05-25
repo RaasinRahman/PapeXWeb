@@ -63,6 +63,13 @@ export function MainNavigation() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link href="/blog" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50 font-semibold text-lg"}>
+                  Blog
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href="/survey" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-[#0a3d62] hover:text-[#ff9933] bg-transparent hover:bg-white/50 font-semibold text-lg"}>
                   Take Our Survey
@@ -118,6 +125,9 @@ export function MainFooter() {
             </Link>
             <Link href="/#traction" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Milestones
+            </Link>
+            <Link href="/blog" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
+              Blog
             </Link>
             <Link href="/survey" className="text-white hover:text-[#ff9933] transition-colors font-semibold text-base">
               Take Our Survey
