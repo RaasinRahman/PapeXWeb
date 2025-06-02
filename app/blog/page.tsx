@@ -22,6 +22,14 @@ const blogPosts: BlogPost[] = [
     date: "May 24, 2025",
     image: "/blog/blog_image.png",
     slug: "hidden-cost-paper-receipts"
+  },
+  {
+    id: "2",
+    title: "The History of Receipts: From Handwritten Notes to Digital Revolution",
+    excerpt: "Receipts have evolved from clay tablets and handwritten notes to the seamless digital experiences we expect today. Discover how 5,000 years of innovation led to the digital receipt revolution.",
+    date: "June 1, 2025",
+    image: "/blog/history_receipts.png",
+    slug: "history-of-receipts"
   }
 ]
 
