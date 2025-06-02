@@ -24,10 +24,10 @@ export default function BlogPost() {
           {/* Hero Image */}
           <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden mb-8">
             <Image
-              src="/blog/blog_image.png"
+              src="/blog/history 2.jpeg"
               alt="The History of Receipts: From Handwritten Notes to Digital Revolution"
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_top_25%]"
               priority
             />
           </div>

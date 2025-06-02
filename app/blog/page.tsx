@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
     title: "The History of Receipts: From Handwritten Notes to Digital Revolution",
     excerpt: "Receipts have evolved from clay tablets and handwritten notes to the seamless digital experiences we expect today. Discover how 5,000 years of innovation led to the digital receipt revolution.",
     date: "June 1, 2025",
-    image: "/blog/history_receipts.png",
+    image: "/blog/hsitryp.jpeg",
     slug: "history-of-receipts"
   }
 ]
