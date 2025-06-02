@@ -62,7 +62,7 @@ export default function BlogPost() {
                 The Very Beginning: Proof of Purchase Through the Ages
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
-                Receipts are older than you might think. Ancient civilizations used clay tablets, stone carvings, and papyrus to record trades. The earliest known written receipts were cuneiform tablets from 2029-1982 BCE, documenting transactions like rent payments and goods lists. Wealthy Egyptians used papyrus for receipts, while common people used broken pottery. Everyone needed proof they paid for something.
+                Receipts are older than you might think. Ancient civilizations used <a href="https://www.smithsonianmag.com/smart-news/researchers-decipher-cuneiform-tablet-and-discover-its-a-furniture-receipt-180984805/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">clay tablets</a>, stone carvings, and papyrus to record trades. The earliest known written receipts were cuneiform tablets from 2029-1982 BCE, documenting transactions like rent payments and goods lists. Wealthy Egyptians used papyrus for receipts, while common people used broken pottery. Everyone needed proof they paid for something.
               </p>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
                 Why? Same reason we do today. To prove ownership. To return faulty goods. To keep track of spending.
@@ -106,7 +106,7 @@ export default function BlogPost() {
                 Then came the breakthrough: thermal paper in the 1960s. This special paper changed color when heated—no ink needed. Thermal printers were smaller, more reliable, and cheaper. By the 1970s, most businesses switched to thermal receipt printers.
               </p>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
-                That white paper that turns black in a hot car? That's thermal paper. It's what most stores still use today.
+                That white paper that <a href="https://telemarkcorp.com/what-is-thermal-paper-receipt-and-how-does-it-work/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">turns black in a hot car</a>? That's thermal paper. It's what most stores still use today.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
@@ -119,7 +119,7 @@ export default function BlogPost() {
                 The internet changed online shopping in the 2000s. Email receipts became standard for websites like Amazon and eBay. Some physical stores started asking, "Would you like your receipt emailed?"
               </p>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
-                But email receipts were clunky—you had to give your email address, they ended up in spam folders, your inbox got cluttered, and merchants used your email for marketing spam. Most people still chose paper.
+                But email receipts were clunky—you had to give your email address, they ended up in spam folders, your inbox got cluttered, and merchants <a href="https://us.norton.com/blog/privacy/email-receipt?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">used your email for marketing spam</a>. Most people still chose paper.
               </p>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
                 Then smartphones arrived. Apple Pay launched in 2014, followed by Google Pay. Suddenly we could pay with our phones in seconds.
@@ -221,7 +221,7 @@ export default function BlogPost() {
               <hr className="my-8" />
 
               <p className="text-[#0a3d62] leading-relaxed mb-6 font-bold">
-                Ready to write the next chapter in receipt history? Join our waitlist at <a href="https://papex.app" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">papex.app</a>. Be among the first to make paper receipts a thing of the past.
+                Ready to write the next chapter in receipt history? <a href="https://www.papex.app/waitlist/" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">Join our waitlist</a> at <a href="https://papex.app" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">papex.app</a>. Be among the first to make paper receipts a thing of the past.
               </p>
             </div>
           </article>
