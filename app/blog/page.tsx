@@ -30,6 +30,14 @@ const blogPosts: BlogPost[] = [
     date: "June 1, 2025",
     image: "/blog/hsitryp.jpeg",
     slug: "history-of-receipts"
+  },
+  {
+    id: "3",
+    title: "Digital vs Paper Receipts: The Modern Choice for Businesses",
+    excerpt: "Should you stick with traditional paper, or is it time to go digital? Discover the hidden costs of paper receipts and why digital is the smarter, greener, and more efficient choice for modern businesses.",
+    date: "June 5, 2025",
+    image: "/blog/digital-vs-paper-hero.png",
+    slug: "digital-vs-paper-receipts"
   }
 ]
 
