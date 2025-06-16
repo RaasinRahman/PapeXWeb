@@ -24,10 +24,10 @@ export default function BlogPost() {
           {/* Hero Image */}
           <div className="relative h-64 md:h-96 w-full rounded-lg overflow-hidden mb-8">
             <Image
-              src="/blog/blog_image.png"
+              src="/blog/blog4.png"
               alt="The Secret Life of Your Shopping Receipt"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
               priority
             />
           </div>
@@ -40,7 +40,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-6">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                <span>June 8, 2025</span>
+                <span>June 16, 2025</span>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function BlogPost() {
                 What story will your next receipt tell?
               </p>
               <p className="text-[#0a3d62] leading-relaxed mb-8">
-                Ready to change how you handle receipts? <a href="https://www.papex.app/waitlist/" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">PapeX automatically captures and organizes every receipt</a> from any purchase, with no paper waste and no email clutter. Join our waitlist to be among the first to experience truly effortless receipt management.
+                Ready to change how you handle receipts? PapeX automatically captures and organizes every receipt from any purchase, with no paper waste and no email clutter. <a href="https://www.papex.app/waitlist/" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">Join our waitlist</a> to be among the first to experience truly effortless receipt management.
               </p>
 
               {/* Call to Action */}

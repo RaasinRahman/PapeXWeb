@@ -19,17 +19,9 @@ const blogPosts: BlogPost[] = [
     id: "3",
     title: "The Secret Life of Your Shopping Receipt: What Happens After You Toss It",
     excerpt: "You grab your coffee, stuff the receipt in your pocket, and forget about it. But what if I told you that innocent slip of paper has quite the story to tell? Follow one receipt on its unlikely journey through our world.",
-    date: "June 8, 2025",
-    image: "/blog/blog_image.png",
+    date: "June 16, 2025",
+    image: "/blog/blog4.png",
     slug: "secret-life-shopping-receipt"
-  },
-  {
-    id: "2",
-    title: "The History of Receipts: From Handwritten Notes to Digital Revolution",
-    excerpt: "Receipts have evolved from clay tablets and handwritten notes to the seamless digital experiences we expect today. Discover how 5,000 years of innovation led to the digital receipt revolution.",
-    date: "June 1, 2025",
-    image: "/blog/hsitryp.jpeg",
-    slug: "history-of-receipts"
   },
   {
     id: "4",
@@ -38,6 +30,14 @@ const blogPosts: BlogPost[] = [
     date: "June 7, 2025",
     image: "/blog/receipt-hate.png",
     slug: "why-business-owners-hate-printing-receipts"
+  },
+  {
+    id: "2",
+    title: "The History of Receipts: From Handwritten Notes to Digital Revolution",
+    excerpt: "Receipts have evolved from clay tablets and handwritten notes to the seamless digital experiences we expect today. Discover how 5,000 years of innovation led to the digital receipt revolution.",
+    date: "June 1, 2025",
+    image: "/blog/hsitryp.jpeg",
+    slug: "history-of-receipts"
   },
   {
     id: "1",
@@ -68,16 +68,18 @@ export default function BlogPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {blogPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group">
-              <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-[#8ab5d1]/20">
+              <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-[#8ab5d1]/20 h-full flex flex-col">
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    className={`object-cover group-hover:scale-105 transition-transform duration-300 ${
+                      post.slug === 'secret-life-shopping-receipt' ? 'object-top' : 'object-center'
+                    }`}
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
@@ -87,7 +89,7 @@ export default function BlogPage() {
                   <h2 className="text-xl font-bold text-[#0a3d62] mb-3 group-hover:text-[#ff9933] transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-[#0a3d62]/80 text-sm leading-relaxed">
+                  <p className="text-[#0a3d62]/80 text-sm leading-relaxed flex-1">
                     {post.excerpt}
                   </p>
                   <div className="mt-4 text-[#ff9933] font-medium text-sm group-hover:underline">
