@@ -16,12 +16,12 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
-    id: "1",
-    title: "The Hidden Cost of Paper Receipts: Why Your Business Should Care",
-    excerpt: "Every day, millions of shoppers walk away from stores clutching small paper receipts. These little strips of paper seem harmless enough. But when we zoom out and look at the bigger picture, the truth is shocking.",
-    date: "May 24, 2025",
+    id: "3",
+    title: "The Secret Life of Your Shopping Receipt: What Happens After You Toss It",
+    excerpt: "You grab your coffee, stuff the receipt in your pocket, and forget about it. But what if I told you that innocent slip of paper has quite the story to tell? Follow one receipt on its unlikely journey through our world.",
+    date: "June 8, 2025",
     image: "/blog/blog_image.png",
-    slug: "hidden-cost-paper-receipts"
+    slug: "secret-life-shopping-receipt"
   },
   {
     id: "2",
@@ -30,6 +30,14 @@ const blogPosts: BlogPost[] = [
     date: "June 1, 2025",
     image: "/blog/hsitryp.jpeg",
     slug: "history-of-receipts"
+  },
+  {
+    id: "1",
+    title: "The Hidden Cost of Paper Receipts: Why Your Business Should Care",
+    excerpt: "Every day, millions of shoppers walk away from stores clutching small paper receipts. These little strips of paper seem harmless enough. But when we zoom out and look at the bigger picture, the truth is shocking.",
+    date: "May 24, 2025",
+    image: "/blog/blog_image.png",
+    slug: "hidden-cost-paper-receipts"
   }
 ]
 
