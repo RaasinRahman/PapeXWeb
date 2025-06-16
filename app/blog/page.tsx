@@ -32,6 +32,14 @@ const blogPosts: BlogPost[] = [
     slug: "history-of-receipts"
   },
   {
+    id: "4",
+    title: "Why Every Business Owner Secretly Hates Printing Receipts (But Keeps Doing It)",
+    excerpt: "Picture this: It's 2:47 PM on a Tuesday, your lunch rush just ended, and you're staring at the receipt printer that's been jamming all morning. Again.",
+    date: "June 7, 2025",
+    image: "/blog/receipt-hate.png",
+    slug: "why-business-owners-hate-printing-receipts"
+  },
+  {
     id: "1",
     title: "The Hidden Cost of Paper Receipts: Why Your Business Should Care",
     excerpt: "Every day, millions of shoppers walk away from stores clutching small paper receipts. These little strips of paper seem harmless enough. But when we zoom out and look at the bigger picture, the truth is shocking.",
