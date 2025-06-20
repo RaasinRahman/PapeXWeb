@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar } from "lucide-react"
+import { ArrowRight, Calendar, Clock } from "lucide-react"
 import { MainNavigation, MainFooter } from "@/components/main-navigation"
 
 interface BlogPost {
@@ -12,88 +12,116 @@ interface BlogPost {
   date: string
   image: string
   slug: string
+  readTime: string
 }
 
 const blogPosts: BlogPost[] = [
   {
-    id: "3",
-    title: "The Secret Life of Your Shopping Receipt: What Happens After You Toss It",
-    excerpt: "You grab your coffee, stuff the receipt in your pocket, and forget about it. But what if I told you that innocent slip of paper has quite the story to tell? Follow one receipt on its unlikely journey through our world.",
-    date: "June 16, 2025",
-    image: "/blog/blog4.png",
-    slug: "secret-life-shopping-receipt"
-  },
-  {
-    id: "4",
-    title: "Why Every Business Owner Secretly Hates Printing Receipts (But Keeps Doing It)",
-    excerpt: "Picture this: It's 2:47 PM on a Tuesday, your lunch rush just ended, and you're staring at the receipt printer that's been jamming all morning. Again.",
-    date: "June 7, 2025",
-    image: "/blog/receipt-hate.png",
-    slug: "why-business-owners-hate-printing-receipts"
+    id: "1",
+    title: "The Hidden Cost of Paper Receipts: Why Your Business Needs to Go Digital",
+    excerpt: "Discover the surprising environmental and financial impact of paper receipts on your business, and learn why digital receipts are the future.",
+    date: "2024-01-15",
+    image: "/blog/blog_image.png",
+    slug: "hidden-cost-paper-receipts",
+    readTime: "5 min read"
   },
   {
     id: "2",
-    title: "The History of Receipts: From Handwritten Notes to Digital Revolution",
-    excerpt: "Receipts have evolved from clay tablets and handwritten notes to the seamless digital experiences we expect today. Discover how 5,000 years of innovation led to the digital receipt revolution.",
-    date: "June 1, 2025",
-    image: "/blog/hsitryp.jpeg",
-    slug: "history-of-receipts"
+    title: "A Brief History of Receipts: From Ancient Clay Tablets to Digital Innovation",
+    excerpt: "Explore the fascinating evolution of receipts throughout history and how PapeX is writing the next chapter in transaction documentation.",
+    date: "2024-01-10",
+    image: "/blog/history 2.jpeg",
+    slug: "history-of-receipts",
+    readTime: "7 min read"
   },
   {
-    id: "1",
-    title: "The Hidden Cost of Paper Receipts: Why Your Business Should Care",
-    excerpt: "Every day, millions of shoppers walk away from stores clutching small paper receipts. These little strips of paper seem harmless enough. But when we zoom out and look at the bigger picture, the truth is shocking.",
-    date: "May 24, 2025",
-    image: "/blog/blog_image.png",
-    slug: "hidden-cost-paper-receipts"
+    id: "3",
+    title: "The Secret Life of Your Shopping Receipt: What Happens After You Throw It Away",
+    excerpt: "Uncover the environmental journey of discarded paper receipts and why digital alternatives are crucial for our planet's future.",
+    date: "2024-01-05",
+    image: "/blog/blog4.png",
+    slug: "secret-life-shopping-receipt",
+    readTime: "6 min read"
+  },
+  {
+    id: "4",
+    title: "Why Business Owners Hate Printing Receipts (And How PapeX Solves This)",
+    excerpt: "Learn about the real frustrations business owners face with traditional receipt systems and how digital receipts can transform their operations.",
+    date: "2023-12-28",
+    image: "/blog/receipt-hate.png",
+    slug: "why-business-owners-hate-printing-receipts",
+    readTime: "4 min read"
   }
 ]
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#d0e4f4] flex flex-col">
+    <div className="min-h-screen gradient-mesh flex flex-col">
       <MainNavigation />
 
-      <main className="flex-1 container mx-auto py-6 px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock">
-            PapeX Blog
+      <main className="flex-1 container mx-auto py-8 px-4 relative overflow-hidden">
+        {/* Floating background elements - reduced opacity */}
+        <div className="absolute top-10 left-20 w-32 h-32 gradient-primary rounded-full opacity-5 blur-xl animate-float"></div>
+        <div className="absolute top-40 right-10 w-40 h-40 gradient-accent rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-60 left-10 w-36 h-36 gradient-secondary rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="absolute bottom-20 right-1/4 w-28 h-28 gradient-hero rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '5s'}}></div>
+
+        <div className="text-center mb-12 animate-slide-in-up relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock">
+            PapeX <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Blog</span>
           </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] mx-auto mb-4 rounded-full"></div>
-          <p className="text-lg text-[#0a3d62] max-w-3xl mx-auto">
-            Insights, updates, and stories about the future of digital receipts and sustainable business practices.
+          <div className="w-20 h-1 gradient-accent mx-auto mb-6 rounded-full animate-gradient"></div>
+          <p className="text-lg text-[#0a3d62] max-w-2xl mx-auto font-medium">
+            Insights, stories, and updates from the world of digital receipts and sustainable business practices.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {blogPosts.map((post) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+          {blogPosts.map((post, index) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group">
-              <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-[#8ab5d1]/20 h-full flex flex-col">
-                <div className="relative h-48 w-full overflow-hidden">
+              <article 
+                className={`bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden card-hover border border-white/30 shadow-lg animate-slide-in-up relative cursor-pointer`}
+                style={{animationDelay: `${index * 0.15}s`}}
+              >
+                {/* Decorative gradient overlay - reduced opacity */}
+                <div className="absolute top-0 right-0 w-20 h-20 gradient-accent rounded-full blur-xl opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
+                
+                <div className="relative overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className={`object-cover group-hover:scale-105 transition-transform duration-300 ${
-                      post.slug === 'secret-life-shopping-receipt' ? 'object-top' : 'object-center'
+                    width={400}
+                    height={400}
+                    className={`w-full h-80 group-hover:scale-105 transition-transform duration-500 ${
+                      post.slug === 'secret-life-shopping-receipt' ? 'object-cover object-top' : 'object-cover'
                     }`}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-3">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{post.date}</span>
+                
+                <div className="p-6 relative z-10">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="flex items-center gap-1 text-[#0a3d62] bg-[#0a3d62]/10 px-3 py-1 rounded-full">
+                      <Calendar className="h-3 w-3" />
+                      <span className="text-xs font-medium">{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[#ff9933] bg-[#ff9933]/10 px-3 py-1 rounded-full">
+                      <Clock className="h-3 w-3" />
+                      <span className="text-xs font-medium">{post.readTime}</span>
                     </div>
                   </div>
-                  <h2 className="text-xl font-bold text-[#0a3d62] mb-3 group-hover:text-[#ff9933] transition-colors">
+                  
+                  <h2 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock group-hover:text-[#ff9933] transition-colors duration-300 line-clamp-2">
                     {post.title}
                   </h2>
-                  <p className="text-[#0a3d62]/80 text-sm leading-relaxed flex-1">
+                  
+                  <p className="text-[#0a3d62] mb-4 text-sm leading-relaxed font-medium line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="mt-4 text-[#ff9933] font-medium text-sm group-hover:underline">
-                    Read More →
+                  
+                  <div className="inline-flex items-center gap-2 bg-[#0a3d62] group-hover:bg-[#ff9933] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md group-hover:scale-105">
+                    Read More
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </article>
@@ -101,19 +129,24 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="mt-16 relative">
-          <div className="relative flex items-center">
-            <div className="flex-1">
-              <div className="w-full h-0.5 border-b border-dashed border-[#ff9933]"></div>
-            </div>
-            <div className="flex-shrink-0 ml-2">
-              <Image 
-                src="/logos/trans.png"
-                alt="PapeX Logo" 
-                width={32} 
-                height={32}
-                className="transform rotate-45"
-              />
+        <div className="text-center mt-16 animate-slide-in-up relative z-10">
+          <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl max-w-2xl mx-auto border border-white/30 shadow-lg relative overflow-hidden">
+            {/* Decorative background element - reduced opacity */}
+            <div className="absolute bottom-0 right-0 w-32 h-32 gradient-primary rounded-full blur-xl opacity-5"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-2xl font-bold text-[#0a3d62] mb-3 font-gloock">
+                Stay <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Updated</span>
+              </h2>
+              <p className="text-[#0a3d62] mb-6 font-medium">
+                Join our community to get the latest insights on digital receipts, sustainability, and business innovation.
+              </p>
+              <Link 
+                href="/waitlist"
+                className="btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-8 py-3 h-auto text-lg transform hover:scale-105 transition-all duration-300"
+              >
+                Join Our Newsletter
+              </Link>
             </div>
           </div>
         </div>

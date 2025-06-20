@@ -60,27 +60,32 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
-    <div className="flex flex-col min-h-screen bg-[#d0e4f4] scroll-smooth">
+    <div className="flex flex-col min-h-screen gradient-mesh scroll-smooth">
       <MainNavigation />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container mx-auto py-16 px-4 md:py-24 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2 space-y-6">
+        <section className="container mx-auto py-16 px-4 md:py-24 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+          {/* Floating background elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 gradient-accent rounded-full opacity-10 blur-xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 gradient-primary rounded-full opacity-10 blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+          
+          <div className="md:w-1/2 space-y-6 animate-slide-in-left">
             <h1 className="text-4xl md:text-6xl font-bold text-[#0a3d62] leading-tight font-gloock">
-              Revolutionizing Digital Receipts
+              Revolutionizing 
+              <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent"> Digital Receipts</span>
             </h1>
-            <p className="text-xl text-[#0a3d62] md:pr-12">
+            <p className="text-xl text-[#0a3d62] md:pr-12 opacity-90">
               PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/waitlist" className="w-full sm:w-auto">
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-6 py-6 h-auto">
+                <Button className="w-full btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-8 py-4 h-auto text-lg transform hover:scale-105 transition-all duration-300">
                   Join Our Waitlist
                 </Button>
               </Link>
               <Link href="/survey" className="w-full sm:w-auto">
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-sm border-none rounded-full px-6 py-6 h-auto">
+                <Button className="w-full btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-8 py-4 h-auto text-lg transform hover:scale-105 transition-all duration-300">
                   Take Our Survey
                 </Button>
               </Link>
@@ -90,7 +95,7 @@ export default function Home() {
               >
                 <Button
                   variant="outline"
-                  className="w-full bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
+                  className="w-full bg-white/80 hover:bg-white text-[#0a3d62] border-2 border-[#0a3d62]/30 hover:border-[#ff9933] hover:text-[#ff9933] rounded-full font-medium px-8 py-4 h-auto text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
                 >
                   Learn More
                 </Button>
@@ -101,7 +106,7 @@ export default function Home() {
               >
                 <Button
                   variant="outline"
-                  className="w-full bg-white/80 text-[#0a3d62] border border-[#0a3d62]/20 hover:bg-white hover:text-[#ff9933] hover:border-[#ff9933] rounded-full font-medium px-6 py-6 h-auto transition-all shadow-sm"
+                  className="w-full bg-white/80 hover:bg-white text-[#0a3d62] border-2 border-[#0a3d62]/30 hover:border-[#ff9933] hover:text-[#ff9933] rounded-full font-medium px-8 py-4 h-auto text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
                 >
                   Learn More
                 </Button>
@@ -109,29 +114,31 @@ export default function Home() {
             </div>
             <div className="md:hidden flex justify-center pt-8">
               <div className="relative inline-block">
-                <div className="absolute h-32 w-32 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
+                <div className="absolute h-32 w-32 border-2 border-[#ff9933] rounded-full animate-pulse-slow opacity-30 -z-10"></div>
+                <div className="absolute h-40 w-40 border border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
                 <Image 
-                  src="/icons/Navy Primary/Navy-Carolina.png"
+                  src="/trans3.png"
                   alt="PapeX Logo" 
                   width={100}
                   height={100}
-                  className="object-contain"
+                  className="object-contain animate-float"
                   priority
                 />
               </div>
             </div>
           </div>
-          <div className="md:w-1/2 relative hidden md:block">
+          <div className="md:w-1/2 relative hidden md:block animate-slide-in-right">
             <div className="relative h-80 w-full flex items-center justify-center">
               <div className="relative inline-block">
-                <div className="absolute h-40 w-40 border-2 border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
+                <div className="absolute h-40 w-40 border-2 border-[#ff9933] rounded-full animate-pulse-slow opacity-30 -z-10"></div>
+                <div className="absolute h-48 w-48 border border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
                 <div className="w-auto h-auto flex items-center justify-center">
                   <Image 
-                    src="/icons/Navy Primary/Navy-Carolina.png"
+                    src="/trans3.png"
                     alt="PapeX Logo" 
                     width={140}
                     height={140}
-                    className="sm:w-[180px] sm:h-[180px] w-[120px] h-[120px] object-contain"
+                    className="sm:w-[180px] sm:h-[180px] w-[120px] h-[120px] object-contain animate-float"
                     priority
                   />
                 </div>
@@ -141,17 +148,21 @@ export default function Home() {
         </section>
 
         {/* Video Demo Section */}
-        <section className="py-16 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-8 font-gloock">
-              See PapeX in Action
+        <section className="py-16 md:py-20 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-10 left-20 w-64 h-64 gradient-secondary rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-20 w-48 h-48 gradient-accent rounded-full blur-3xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-8 font-gloock animate-slide-in-up">
+              See PapeX in <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Action</span>
             </h2>
-            <p className="text-lg text-[#0a3d62] text-center max-w-3xl mx-auto mb-10">
+            <p className="text-lg text-[#0a3d62] text-center max-w-3xl mx-auto mb-10 opacity-90 animate-slide-in-up">
               Watch how PapeX streamlines the receipt process, saving time for both businesses and customers while eliminating paper waste.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* YouTube Video */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="rounded-xl overflow-hidden shadow-2xl card-hover">
                 <div className="aspect-[9/16] max-w-sm mx-auto">
                   <iframe
                     src="https://www.youtube.com/embed/P-9kLv4Kj10"
@@ -165,7 +176,7 @@ export default function Home() {
               </div>
               
               {/* Instagram Reel */}
-              <div className="rounded-xl overflow-hidden shadow-2xl">
+              <div className="rounded-xl overflow-hidden shadow-2xl card-hover">
                 <div className="aspect-[9/16] max-w-sm mx-auto">
                   <iframe
                     src="https://www.instagram.com/reel/DJkVQCuhdQq/embed"
@@ -179,15 +190,15 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4 md:gap-0">
-              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium">
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium animate-slide-in-up">
                 <CheckCircle className="h-5 w-5" />
                 <span>No more paper receipts</span>
               </div>
-              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8">
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8 animate-slide-in-up">
                 <CheckCircle className="h-5 w-5" />
                 <span>Faster checkout experience</span>
               </div>
-              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8">
+              <div className="inline-flex items-center gap-2 text-[#ff9933] font-medium ml-0 md:ml-8 animate-slide-in-up">
                 <CheckCircle className="h-5 w-5" />
                 <span>Easy expense tracking</span>
               </div>
@@ -196,51 +207,60 @@ export default function Home() {
         </section>
 
         {/* Problem Section */}
-        <section id="about" className="scroll-mt-[15vh] bg-[#0a3d62] text-white py-16 md:py-24">
-          <div className="container mx-auto px-4">
+        <section id="about" className="scroll-mt-[15vh] gradient-primary text-white py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-r from-[#ff9933] to-[#e67e22] rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-48 h-48 bg-gradient-to-r from-white to-transparent rounded-full blur-2xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col md:flex-row gap-12">
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 animate-slide-in-left">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">The Problem</h2>
-                <p className="text-lg mb-6">
+                <p className="text-lg mb-6 opacity-90">
                   Businesses annually spend on average, between $3B - $6B on receipt paper in the U.S. alone, and that
                   excludes printer and ink costs. These costs are not only monetary but also waste valuable time at
                   checkout and have environmental impact.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                  <div className="flex items-start gap-4">
-                    <DollarSign className="h-8 w-8 text-[#ff9933] mt-1" />
+                  <div className="flex items-start gap-4 glass p-6 rounded-xl card-hover">
+                    <DollarSign className="h-8 w-8 text-[#ff9933] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-bold text-xl mb-2 font-gloock">Costly</h3>
-                      <p>Billions spent annually on paper receipts and related costs</p>
+                      <p className="opacity-90">Billions spent annually on paper receipts and related costs</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <Clock className="h-8 w-8 text-[#ff9933] mt-1" />
+                  <div className="flex items-start gap-4 glass p-6 rounded-xl card-hover">
+                    <Clock className="h-8 w-8 text-[#ff9933] mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-bold text-xl mb-2 font-gloock">Time-Consuming</h3>
-                      <p>Wastes valuable time at checkout for both businesses and customers</p>
+                      <p className="opacity-90">Wastes valuable time at checkout for both businesses and customers</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/2 bg-[#0c4b76] p-8 rounded-lg">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">Our Solution</h2>
-                <p className="text-lg mb-6">
-                  PapeX is developing a digital platform that will eliminate the need for physical, email, or text
-                  receipts, seamlessly bridging the gap between the final stages of the retail transaction process and
-                  individual or professional financial or expense management.
-                </p>
-                <div className="flex items-center gap-3 mt-8">
-                  <CheckCircle className="h-6 w-6 text-[#ff9933]" />
-                  <p className="font-medium">Eliminate paper waste</p>
-                </div>
-                <div className="flex items-center gap-3 mt-4">
-                  <CheckCircle className="h-6 w-6 text-[#ff9933]" />
-                  <p className="font-medium">Save time at checkout</p>
-                </div>
-                <div className="flex items-center gap-3 mt-4">
-                  <CheckCircle className="h-6 w-6 text-[#ff9933]" />
-                  <p className="font-medium">Streamline expense management</p>
+              <div className="md:w-1/2 gradient-secondary text-[#0a3d62] p-8 rounded-2xl card-hover animate-slide-in-right relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-[#ff9933]/20 to-[#e67e22]/20 rounded-full blur-xl"></div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">Our Solution</h2>
+                  <p className="text-lg mb-6 opacity-90">
+                    PapeX is developing a digital platform that will eliminate the need for physical, email, or text
+                    receipts, seamlessly bridging the gap between the final stages of the retail transaction process and
+                    individual or professional financial or expense management.
+                  </p>
+                  <div className="space-y-4 mt-8">
+                    <div className="flex items-center gap-3 glass-dark p-4 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-[#ff9933] flex-shrink-0" />
+                      <p className="font-medium">Eliminate paper waste</p>
+                    </div>
+                    <div className="flex items-center gap-3 glass-dark p-4 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-[#ff9933] flex-shrink-0" />
+                      <p className="font-medium">Save time at checkout</p>
+                    </div>
+                    <div className="flex items-center gap-3 glass-dark p-4 rounded-lg">
+                      <CheckCircle className="h-6 w-6 text-[#ff9933] flex-shrink-0" />
+                      <p className="font-medium">Streamline expense management</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,57 +268,74 @@ export default function Home() {
         </section>
 
         {/* Business Model Section */}
-        <section id="business-model" className="scroll-mt-[15vh] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock">
-              Win-Win-Win Business Model
+        <section id="business-model" className="scroll-mt-[15vh] py-16 md:py-24 gradient-mesh relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-10 left-10 w-96 h-96 gradient-accent rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-64 h-64 gradient-primary rounded-full blur-3xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock animate-slide-in-up">
+              Win-Win-Win <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Business Model</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for POS Vendors</h3>
-                <p className="text-[#0a3d62] mb-6">
-                  Point-of-Sale (POS) vendors will generate new revenue streams through our integration.
-                </p>
-                <div className="h-1 w-16 bg-[#ff9933] mb-6"></div>
-                <p className="text-[#0a3d62] font-medium">
-                  New revenue opportunities without changing existing systems.
-                </p>
+              <div className="glass p-8 rounded-2xl border-t-4 border-[#ff9933] card-hover animate-slide-in-left relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 gradient-accent rounded-full blur-xl opacity-20"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for POS Vendors</h3>
+                  <p className="text-[#0a3d62] mb-6 opacity-90">
+                    Point-of-Sale (POS) vendors will generate new revenue streams through our integration.
+                  </p>
+                  <div className="h-1 w-16 gradient-accent rounded mb-6"></div>
+                  <p className="text-[#0a3d62] font-medium">
+                    New revenue opportunities without changing existing systems.
+                  </p>
+                </div>
               </div>
-              <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Merchants</h3>
-                <p className="text-[#0a3d62] mb-6">
-                  Merchants will save time, money, and reduce waste by eliminating physical receipts.
-                </p>
-                <div className="h-1 w-16 bg-[#ff9933] mb-6"></div>
-                <p className="text-[#0a3d62] font-medium">
-                  Lower costs, faster checkout times, and minimized waste leading to a better customer experience.
-                </p>
+              <div className="glass p-8 rounded-2xl border-t-4 border-[#ff9933] card-hover animate-slide-in-up relative overflow-hidden" style={{animationDelay: '0.2s'}}>
+                <div className="absolute top-0 right-0 w-20 h-20 gradient-accent rounded-full blur-xl opacity-20"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Merchants</h3>
+                  <p className="text-[#0a3d62] mb-6 opacity-90">
+                    Merchants will save time, money, and reduce waste by eliminating physical receipts.
+                  </p>
+                  <div className="h-1 w-16 gradient-accent rounded mb-6"></div>
+                  <p className="text-[#0a3d62] font-medium">
+                    Lower costs, faster checkout times, and minimized waste leading to a better customer experience.
+                  </p>
+                </div>
               </div>
-              <div className="bg-[#d0e4f4] p-8 rounded-lg border-t-4 border-[#ff9933]">
-                <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Customers</h3>
-                <p className="text-[#0a3d62] mb-6">
-                  Individuals or entities receiving receipts will benefit from faster checkouts and more efficient
-                  financial and expense management.
-                </p>
-                <div className="h-1 w-16 bg-[#ff9933] mb-6"></div>
-                <p className="text-[#0a3d62] font-medium">Simplified expense tracking and financial management, all while reducing their carbon footprint.</p>
+              <div className="glass p-8 rounded-2xl border-t-4 border-[#ff9933] card-hover animate-slide-in-right relative overflow-hidden" style={{animationDelay: '0.4s'}}>
+                <div className="absolute top-0 right-0 w-20 h-20 gradient-accent rounded-full blur-xl opacity-20"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-[#0a3d62] mb-4 font-gloock">Win for Customers</h3>
+                  <p className="text-[#0a3d62] mb-6 opacity-90">
+                    Individuals or entities receiving receipts will benefit from faster checkouts and more efficient
+                    financial and expense management.
+                  </p>
+                  <div className="h-1 w-16 gradient-accent rounded mb-6"></div>
+                  <p className="text-[#0a3d62] font-medium">Simplified expense tracking and financial management, all while reducing their carbon footprint.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Market Opportunity */}
-        <section id="market-opportunity" className="scroll-mt-[15vh] bg-[#0a3d62] py-16 md:py-24">
-          <div className="container mx-auto px-4">
+        <section id="market-opportunity" className="scroll-mt-[15vh] gradient-primary py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-r from-[#ff9933] to-[#e67e22] rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-72 h-72 bg-gradient-to-r from-white to-transparent rounded-full blur-2xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="md:w-1/2">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-gloock">Market Opportunity</h2>
-                <p className="text-lg text-white mb-8">
+              <div className="md:w-1/2 animate-slide-in-left">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-gloock">Market <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Opportunity</span></h2>
+                <p className="text-lg text-white mb-8 opacity-90">
                   PapeX targets anyone who receives or issues receipts, including both brick-and-mortar businesses and
                   online retailers. We will generate revenue through a combination of pay-per-print and
                   subscription-based pricing, depending on the model chosen by the merchant.
                 </p>
-                <p className="text-lg text-white">
+                <p className="text-lg text-white opacity-90">
                   In addition to these core pricing models, we will generate revenue through non-PII data monetization and B2B integrations with tax, accounting, and financial software.
                 </p>
               </div>
@@ -352,44 +389,54 @@ export default function Home() {
         </section>
 
         {/* Traction Section */}
-        <section id="traction" className="scroll-mt-[15vh] py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock">Traction & Milestones</h2>
+        <section id="traction" className="scroll-mt-[15vh] py-16 md:py-24 gradient-mesh relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-20 left-20 w-80 h-80 gradient-primary rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 right-20 w-64 h-64 gradient-accent rounded-full blur-3xl"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0a3d62] text-center mb-12 font-gloock animate-slide-in-up">Traction & <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Milestones</span></h2>
             <div className="max-w-3xl mx-auto">
               <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[#ff9933]"></div>
+                <div className="absolute left-4 top-0 bottom-0 w-1 gradient-accent rounded-full"></div>
 
-                <div className="relative pl-12 pb-12">
-                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
+                <div className="relative pl-12 pb-12 animate-slide-in-left">
+                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full gradient-accent shadow-lg flex items-center justify-center card-hover">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Clover POS Integration</h3>
-                  <p className="text-[#0a3d62]">
-                    Successfully developed an almost fully functional integration for the Clover POS system, relying
-                    solely on a dedicated group of students with support from professionals and advisors.
-                  </p>
+                  <div className="glass p-6 rounded-xl card-hover">
+                    <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Clover POS Integration</h3>
+                    <p className="text-[#0a3d62] opacity-90">
+                      Successfully developed an almost fully functional integration for the Clover POS system, relying
+                      solely on a dedicated group of students with support from professionals and advisors.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="relative pl-12 pb-12">
-                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
+                <div className="relative pl-12 pb-12 animate-slide-in-left" style={{animationDelay: '0.2s'}}>
+                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full gradient-accent shadow-lg flex items-center justify-center card-hover">
                     <BarChart3 className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Growing Waitlist</h3>
-                  <p className="text-[#0a3d62]">
-                    Market interest is evident, with a growing waitlist of potential customers eager to adopt the
-                    solution.
-                  </p>
+                  <div className="glass p-6 rounded-xl card-hover">
+                    <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Growing Waitlist</h3>
+                    <p className="text-[#0a3d62] opacity-90">
+                      Market interest is evident, with a growing waitlist of potential customers eager to adopt the
+                      solution.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="relative pl-12">
-                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#ff9933] flex items-center justify-center">
+                <div className="relative pl-12 animate-slide-in-left" style={{animationDelay: '0.4s'}}>
+                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full gradient-accent shadow-lg flex items-center justify-center card-hover">
                     <DollarSign className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Pitch Competition Winner</h3>
-                  <p className="text-[#0a3d62]">
-                    PapeX gained recognition by winning a pitch competition judged by the top 50 fastest-growing
-                    Syracuse alumni entrepreneurs, securing $6,000 in funding to further development.
-                  </p>
+                  <div className="glass p-6 rounded-xl card-hover">
+                    <h3 className="text-xl font-bold text-[#0a3d62] mb-2 font-gloock">Pitch Competition Winner</h3>
+                    <p className="text-[#0a3d62] opacity-90">
+                      PapeX gained recognition by winning a pitch competition judged by the top 50 fastest-growing
+                      Syracuse alumni entrepreneurs, securing $6,000 in funding to further development.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -397,41 +444,47 @@ export default function Home() {
         </section>
 
         {/* Waitlist Section */}
-        <section id="waitlist" className="scroll-mt-[15vh] bg-[#0a3d62] text-white py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock">Show Your Support!</h2>
-            <p className="text-xl max-w-2xl mx-auto mb-12">
+        <section id="waitlist" className="scroll-mt-[15vh] gradient-primary text-white py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-r from-[#ff9933] to-[#e67e22] rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-10 left-10 w-72 h-72 bg-gradient-to-r from-white to-transparent rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
+          </div>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-gloock animate-slide-in-up">Show Your <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Support!</span></h2>
+            <p className="text-xl max-w-2xl mx-auto mb-12 opacity-90 animate-slide-in-up">
               PapeX is currently building our waitlist as we seek investors. There's no obligation or commitment on your part, but if you're interested click here!
             </p>
 
-            <div className="max-w-md mx-auto">
+            <div className="max-w-md mx-auto animate-slide-in-up">
               <Link href="/waitlist">
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-6 py-6 h-auto mb-4">
+                <Button className="w-full btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-8 py-4 h-auto text-lg transform hover:scale-105 transition-all duration-300 mb-8">
                   Join Our Waitlist
                 </Button>
               </Link>
               <Link href="/survey">
-                <Button className="w-full bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-6 py-6 h-auto">
+                <Button className="w-full btn-modern glass hover:glass-dark text-white font-medium border-2 border-white/30 hover:border-[#ff9933] rounded-full px-8 py-4 h-auto text-lg transform hover:scale-105 transition-all duration-300">
                   Take Our Survey
                 </Button>
               </Link>
             </div>
 
-            <p className="mt-12 text-lg">Your support is greatly appreciated!</p>
+            <p className="mt-12 text-lg opacity-90 animate-slide-in-up">Your support is greatly appreciated!</p>
 
-            <div className="mt-16 relative">
+            <div className="mt-16 relative animate-slide-in-up">
               <div className="relative flex items-center">
                 <div className="flex-1">
-                  <div className="w-full h-0.5 border-b border-dashed border-[#ff9933]"></div>
+                  <div className="w-full h-0.5 border-b border-dashed border-[#ff9933] opacity-60"></div>
                 </div>
                 <div className="flex-shrink-0 ml-2">
-                  <Image 
-                    src="/logos/trans.png"
-                    alt="PapeX Logo" 
-                    width={48} 
-                    height={48}
-                    className="transform rotate-45"
-                  />
+                  <div className="p-2 glass rounded-full">
+                    <Image 
+                      src="/logos/trans.png"
+                      alt="PapeX Logo" 
+                      width={48} 
+                      height={48}
+                      className="transform rotate-45 animate-float"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

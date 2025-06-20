@@ -76,49 +76,68 @@ const teamMembers: TeamMember[] = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#d0e4f4] flex flex-col">
+    <div className="min-h-screen gradient-mesh flex flex-col">
       <MainNavigation />
 
-      <main className="flex-1 container mx-auto py-6 px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-4 text-center">Meet the PapeX Team</h1>
-        <div className="w-20 h-1 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] mx-auto mb-4 rounded-full"></div>
-        <p className="text-lg text-[#0a3d62] max-w-3xl mx-auto text-center mb-6">
-          The passionate individuals behind PapeX working to revolutionize digital receipts
-          and transform how businesses and customers manage transactions.
-        </p>
+      <main className="flex-1 container mx-auto py-6 px-4 relative overflow-hidden">
+        {/* Floating background elements - reduced opacity */}
+        <div className="absolute top-20 left-10 w-40 h-40 gradient-accent rounded-full opacity-5 blur-xl animate-float"></div>
+        <div className="absolute top-60 right-20 w-32 h-32 gradient-primary rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-36 h-36 gradient-secondary rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '4s'}}></div>
+        <div className="absolute bottom-20 right-10 w-28 h-28 gradient-accent rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '6s'}}></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="text-center mb-12 animate-slide-in-up relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-4 font-gloock">
+            Meet the PapeX <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Team</span>
+          </h1>
+          <div className="w-20 h-1 gradient-accent mx-auto mb-4 rounded-full animate-gradient"></div>
+          <p className="text-lg text-[#0a3d62] max-w-3xl mx-auto font-medium">
+            The passionate individuals behind PapeX working to revolutionize digital receipts
+            and transform how businesses and customers manage transactions.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-[#8ab5d1]/20">
-              <div className="relative h-48 w-full bg-gradient-to-br from-[#0a3d62]/5 to-[#ff9933]/5 flex items-center justify-center">
+            <div key={index} className={`bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden card-hover border border-white/30 shadow-lg animate-slide-in-up relative group`} style={{animationDelay: `${index * 0.1}s`}}>
+              {/* Decorative gradient overlay - reduced opacity */}
+              <div className="absolute top-0 right-0 w-16 h-16 gradient-accent rounded-full blur-xl opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
+              
+              <div className="relative h-48 w-full bg-gradient-to-br from-[#0a3d62]/5 to-[#ff9933]/5 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-[#0a3d62]/10 overflow-hidden">
+                  <div className="w-28 h-28 rounded-full bg-white/80 backdrop-blur-sm overflow-hidden ring-2 ring-[#0a3d62]/20 group-hover:ring-[#ff9933]/40 transition-all duration-300 group-hover:scale-105 shadow-md">
                     <TeamImage
                       src={member.image}
                       alt={member.name}
                       fallbackSrc={member.fallbackImage}
                       width={200}
                       height={200}
-                      className="object-cover w-full h-full"
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                 </div>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a3d62]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-4 flex flex-col items-center text-center">
-                <h2 className="text-lg font-bold text-[#0a3d62] mb-1">{member.name}</h2>
-                <p className="text-[#ff9933] font-medium mb-2">{member.role}</p>
-                {member.bio && <p className="text-[#0a3d62]/80 mb-2 text-xs">{member.bio}</p>}
-                <div className="flex flex-row gap-3 mt-1">
+              
+              <div className="p-4 flex flex-col items-center text-center relative z-10">
+                <h2 className="text-lg font-bold text-[#0a3d62] mb-2 font-gloock group-hover:text-[#ff9933] transition-colors duration-300">{member.name}</h2>
+                <div className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] px-3 py-1 rounded-full mb-3">
+                  <p className="text-white font-medium text-sm">{member.role}</p>
+                </div>
+                {member.bio && <p className="text-[#0a3d62] mb-4 text-xs leading-relaxed font-medium">{member.bio}</p>}
+                
+                <div className="flex flex-row gap-3 mt-2">
                   <a 
                     href={`mailto:${member.email}`} 
-                    className="inline-flex items-center gap-1 text-[#0a3d62] hover:text-[#ff9933] transition-colors text-xs font-medium"
+                    className="inline-flex items-center gap-1 bg-[#0a3d62] hover:bg-[#ff9933] px-3 py-2 rounded-full text-white transition-all duration-300 text-xs font-medium hover:scale-105 group/btn shadow-md"
                   >
-                    <Mail className="h-3 w-3" />
+                    <Mail className="h-3 w-3 group-hover/btn:scale-110 transition-transform duration-300" />
                     Email
                   </a>
                   {member.linkedin && (
-                    <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0a3d62] hover:text-[#ff9933] transition-colors text-xs font-medium">
-                      <Linkedin className="h-3 w-3" />
+                    <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 bg-[#0a3d62] hover:bg-[#ff9933] px-3 py-2 rounded-full text-white transition-all duration-300 text-xs font-medium hover:scale-105 group/btn shadow-md">
+                      <Linkedin className="h-3 w-3 group-hover/btn:scale-110 transition-transform duration-300" />
                       LinkedIn
                     </Link>
                   )}
@@ -128,32 +147,43 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <h2 className="text-xl md:text-2xl font-bold text-[#0a3d62] mb-3">Join Our Mission</h2>
-          <p className="text-base text-[#0a3d62] max-w-3xl mx-auto mb-4">
-            Want to be part of our journey to transform digital receipts? We're always looking for passionate 
-            individuals to join our team.
-          </p>
-          <Link href="/waitlist">
-            <Button className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] hover:opacity-90 text-white font-medium shadow-md border-none rounded-full px-4 py-2 h-auto">
-              Join Our Waitlist
-            </Button>
-          </Link>
+        <div className="text-center mt-12 animate-slide-in-up relative z-10">
+          <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl max-w-2xl mx-auto border border-white/30 shadow-lg relative overflow-hidden">
+            {/* Decorative background element - reduced opacity */}
+            <div className="absolute top-0 left-0 w-32 h-32 gradient-secondary rounded-full blur-xl opacity-5"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-xl md:text-2xl font-bold text-[#0a3d62] mb-3 font-gloock">
+                Join Our <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Mission</span>
+              </h2>
+              <p className="text-base text-[#0a3d62] mb-6 font-medium">
+                Want to be part of our journey to transform digital receipts? We're always looking for passionate 
+                individuals to join our team.
+              </p>
+              <Link href="/waitlist">
+                <Button className="btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-8 py-3 h-auto text-lg transform hover:scale-105 transition-all duration-300">
+                  Join Our Waitlist
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-8 relative">
+        <div className="mt-12 relative animate-slide-in-up">
           <div className="relative flex items-center">
             <div className="flex-1">
-              <div className="w-full h-0.5 border-b border-dashed border-[#ff9933]"></div>
+              <div className="w-full h-0.5 border-b border-dashed border-[#ff9933] opacity-60"></div>
             </div>
             <div className="flex-shrink-0 ml-2">
-              <Image 
-                src="/logos/trans.png"
-                alt="PapeX Logo" 
-                width={32} 
-                height={32}
-                className="transform rotate-45"
-              />
+              <div className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md">
+                <Image 
+                  src="/logos/trans.png"
+                  alt="PapeX Logo" 
+                  width={32} 
+                  height={32}
+                  className="transform rotate-45 animate-float"
+                />
+              </div>
             </div>
           </div>
         </div>
