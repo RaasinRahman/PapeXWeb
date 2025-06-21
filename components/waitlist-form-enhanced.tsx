@@ -9,24 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle, Send, Loader2, Mail, User, Briefcase, UserRound, MessageSquare } from "lucide-react"
 // Firebase imports
-import { initializeApp } from "firebase/app"
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore"
-
-// Firebase configuration
-// Replace these values with your actual Firebase project configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBmgOGbblRFjLim67GRDRwcSxB2yNDCPHU",
-  authDomain: "papexweb-aed97.firebaseapp.com",
-  projectId: "papexweb-aed97",
-  storageBucket: "papexweb-aed97.firebasestorage.app",
-  messagingSenderId: "472497425561",
-  appId: "1:472497425561:web:4e1a57c35b79dc9173fc08",
-  measurementId: "G-8B48SQB7FX"
-}
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
+import { db } from "@/firebase/firebaseConfig"
 
 export default function WaitlistFormEnhanced() {
   const [formState, setFormState] = useState({
