@@ -125,17 +125,21 @@ export default function BlogPage() {
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             {[...Array(4)].map((_, index) => (
-              <div key={index} className="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/30 shadow-lg animate-pulse">
-                <div className="w-full h-80 bg-gray-200"></div>
-                <div className="p-6 space-y-4">
-                  <div className="flex gap-4">
+              <div key={index} className="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/30 shadow-lg animate-pulse h-full flex flex-col">
+                <div className="w-full h-80 bg-gray-200 flex-shrink-0"></div>
+                <div className="p-6 space-y-4 flex flex-col flex-grow">
+                  <div className="flex gap-4 flex-shrink-0">
                     <div className="h-4 bg-gray-200 rounded w-20"></div>
                     <div className="h-4 bg-gray-200 rounded w-16"></div>
                   </div>
-                  <div className="h-6 bg-gray-200 rounded w-3/4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-full"></div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-                  <div className="h-8 bg-gray-200 rounded w-24"></div>
+                  <div className="h-6 bg-gray-200 rounded w-3/4 flex-shrink-0 min-h-[3.5rem] flex items-center">
+                    <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+                  </div>
+                  <div className="space-y-2 flex-grow min-h-[2.5rem]">
+                    <div className="h-4 bg-gray-200 rounded w-full"></div>
+                    <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+                  </div>
+                  <div className="h-8 bg-gray-200 rounded w-24 mt-auto"></div>
                 </div>
               </div>
             ))}
@@ -143,24 +147,22 @@ export default function BlogPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             {blogPosts.map((post, index) => (
-            <Link key={post.id} href={`/blog/${post.slug}`} className="group">
+            <Link key={post.id} href={`/blog/${post.slug}`} className="group h-full">
               <article 
-                className={`bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden card-hover border border-white/30 shadow-lg animate-slide-in-up relative cursor-pointer`}
+                className={`bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden card-hover border border-white/30 shadow-lg animate-slide-in-up relative cursor-pointer h-full flex flex-col`}
                 style={{animationDelay: `${index * 0.15}s`}}
               >
                 {/* Decorative gradient overlay - reduced opacity */}
                 <div className="absolute top-0 right-0 w-20 h-20 gradient-accent rounded-full blur-xl opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
                 
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden flex-shrink-0">
                   {post.image && post.image.trim() !== '' ? (
                     <Image
                       src={post.image}
                       alt={post.title}
                       width={400}
-                      height={400}
-                      className={`w-full h-80 group-hover:scale-105 transition-transform duration-500 ${
-                        post.slug === 'secret-life-shopping-receipt' ? 'object-cover object-top' : 'object-cover'
-                      }`}
+                      height={320}
+                      className={`w-full h-80 group-hover:scale-105 transition-transform duration-500 object-cover`}
                     />
                   ) : (
                     <div className="w-full h-80 bg-gradient-to-br from-[#0a3d62]/10 to-[#ff9933]/10 flex items-center justify-center">
@@ -177,11 +179,11 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
-                <div className="p-6 relative z-10">
-                  <div className="flex items-center gap-4 mb-3">
+                <div className="p-6 relative z-10 flex flex-col flex-grow">
+                  <div className="flex items-center gap-4 mb-3 flex-shrink-0">
                     <div className="flex items-center gap-1 text-[#0a3d62] bg-[#0a3d62]/10 px-3 py-1 rounded-full">
                       <Calendar className="h-3 w-3" />
-                                              <span className="text-xs font-medium">{formatDate(post.createdAt)}</span>
+                      <span className="text-xs font-medium">{formatDate(post.createdAt)}</span>
                     </div>
                     <div className="flex items-center gap-1 text-[#ff9933] bg-[#ff9933]/10 px-3 py-1 rounded-full">
                       <Clock className="h-3 w-3" />
@@ -189,15 +191,15 @@ export default function BlogPage() {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock group-hover:text-[#ff9933] transition-colors duration-300 line-clamp-2">
+                  <h2 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock group-hover:text-[#ff9933] transition-colors duration-300 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
                     {post.title}
                   </h2>
                   
-                  <p className="text-[#0a3d62] mb-4 text-sm leading-relaxed font-medium line-clamp-2">
+                  <p className="text-[#0a3d62] mb-4 text-sm leading-relaxed font-medium line-clamp-2 flex-grow min-h-[2.5rem]">
                     {post.excerpt}
                   </p>
                   
-                  <div className="inline-flex items-center gap-2 bg-[#0a3d62] group-hover:bg-[#ff9933] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md group-hover:scale-105">
+                  <div className="inline-flex items-center gap-2 bg-[#0a3d62] group-hover:bg-[#ff9933] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md group-hover:scale-105 self-start mt-auto">
                     Read More
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>

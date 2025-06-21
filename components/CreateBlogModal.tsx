@@ -1,15 +1,17 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Switch } from "@/components/ui/switch"
-import { Plus, Upload, X, Bold, Type, Link, Italic } from "lucide-react"
+import { Plus, Upload, X, Bold, Type, Link, Italic, Crop as CropIcon } from "lucide-react"
 import { blogService, CreateBlogPost } from '@/lib/blogService'
 import { useAdminAuth } from '@/hooks/useAdmin'
+import ReactCrop, { Crop, PixelCrop } from 'react-image-crop'
+import 'react-image-crop/dist/ReactCrop.css'
 
 interface CreateBlogModalProps {
   onBlogCreated?: () => void
@@ -20,7 +22,12 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const [imagePreview, setImagePreview] = useState<string | null>(null)
+  const [showCrop, setShowCrop] = useState(false)
+  const [crop, setCrop] = useState<Crop>()
+  const [completedCrop, setCompletedCrop] = useState<PixelCrop>()
+  const [croppedImageUrl, setCroppedImageUrl] = useState<string | null>(null)
   const contentTextareaRef = useRef<HTMLTextAreaElement>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
   
   const { isAdmin } = useAdminAuth()
   
@@ -48,6 +55,9 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
       const reader = new FileReader()
       reader.onload = (e) => {
         setImagePreview(e.target?.result as string)
+        setShowCrop(true)
+        setCroppedImageUrl(null)
+        // Crop will be set automatically when image loads in onImageLoad
       }
       reader.readAsDataURL(file)
     }
@@ -56,6 +66,123 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
   const removeImage = () => {
     setFormData(prev => ({ ...prev, image: undefined }))
     setImagePreview(null)
+    setCroppedImageUrl(null)
+    setShowCrop(false)
+  }
+
+  const onImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
+    const { width, height } = e.currentTarget
+    
+    // Calculate crop area to match blog card dimensions (740x320px = 2.3125:1 aspect ratio)
+    const targetWidth = 740
+    const targetHeight = 320
+    const aspectRatio = targetWidth / targetHeight
+    
+    let cropWidth, cropHeight, cropX, cropY
+    
+    if (width / height > aspectRatio) {
+      // Image is wider than target aspect ratio
+      cropHeight = height
+      cropWidth = height * aspectRatio
+      cropX = (width - cropWidth) / 2
+      cropY = 0
+    } else {
+      // Image is taller than target aspect ratio
+      cropWidth = width
+      cropHeight = width / aspectRatio
+      cropX = 0
+      cropY = (height - cropHeight) / 2
+    }
+    
+    setCrop({
+      unit: 'px',
+      width: cropWidth,
+      height: cropHeight,
+      x: cropX,
+      y: cropY
+    })
+    
+    // Also set completed crop immediately
+    setCompletedCrop({
+      unit: 'px',
+      width: cropWidth,
+      height: cropHeight,
+      x: cropX,
+      y: cropY
+    })
+  }, [])
+
+  const getCroppedImg = useCallback((image: HTMLImageElement, crop: PixelCrop): Promise<string> => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    
+    if (!ctx) {
+      throw new Error('No 2d context')
+    }
+
+    // Set canvas size to blog card dimensions (740x320)
+    canvas.width = 740
+    canvas.height = 320
+
+    // Debug logging
+    console.log('Image natural dimensions:', image.naturalWidth, 'x', image.naturalHeight)
+    console.log('Image display dimensions:', image.width, 'x', image.height)
+    console.log('Crop area:', crop)
+
+    // Calculate scale factors between natural image size and displayed size
+    const scaleX = image.naturalWidth / image.width
+    const scaleY = image.naturalHeight / image.height
+
+    // Scale crop coordinates to natural image dimensions
+    const scaledCrop = {
+      x: crop.x * scaleX,
+      y: crop.y * scaleY,
+      width: crop.width * scaleX,
+      height: crop.height * scaleY
+    }
+
+    console.log('Scaled crop area:', scaledCrop)
+
+    ctx.drawImage(
+      image,
+      scaledCrop.x,
+      scaledCrop.y,
+      scaledCrop.width,
+      scaledCrop.height,
+      0,
+      0,
+      740,
+      320
+    )
+
+    return new Promise((resolve) => {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          throw new Error('Canvas is empty')
+        }
+        const url = URL.createObjectURL(blob)
+        resolve(url)
+      }, 'image/jpeg', 0.9)
+    })
+  }, [])
+
+  const handleCropComplete = useCallback(async () => {
+    if (completedCrop && imgRef.current) {
+      try {
+        const croppedImageUrl = await getCroppedImg(imgRef.current, completedCrop)
+        setCroppedImageUrl(croppedImageUrl)
+        setShowCrop(false)
+      } catch (error) {
+        console.error('Error cropping image:', error)
+        setError('Failed to crop image')
+      }
+    }
+  }, [completedCrop, getCroppedImg])
+
+  const handleCropCancel = () => {
+    setShowCrop(false)
+    setCrop(undefined)
+    setCompletedCrop(undefined)
   }
 
   // Rich text formatting functions
@@ -142,7 +269,52 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
       
       // Convert markdown content to HTML before saving
       const htmlContent = convertMarkdownToHTML(formData.content)
-      const blogDataWithHTML = { ...formData, content: htmlContent }
+      let blogDataWithHTML = { ...formData, content: htmlContent }
+      
+      // If we have a crop in progress but haven't applied it yet, apply it automatically
+      if (showCrop && completedCrop && imgRef.current && !croppedImageUrl) {
+        try {
+          console.log('Auto-applying crop before submission...')
+          const autoCroppedImageUrl = await getCroppedImg(imgRef.current, completedCrop)
+          setCroppedImageUrl(autoCroppedImageUrl)
+          setShowCrop(false)
+          
+          // Convert the auto-cropped image to base64
+          const response = await fetch(autoCroppedImageUrl)
+          const blob = await response.blob()
+          const reader = new FileReader()
+          const base64Promise = new Promise<string>((resolve) => {
+            reader.onload = () => resolve(reader.result as string)
+            reader.readAsDataURL(blob)
+          })
+          const base64Data = await base64Promise
+          blogDataWithHTML = { ...blogDataWithHTML, image: base64Data }
+        } catch (error) {
+          console.error('Error auto-applying crop:', error)
+          setError('Failed to process image crop')
+          setIsLoading(false)
+          return
+        }
+      }
+      // If we have a cropped image, convert it to base64 and use that instead
+      else if (croppedImageUrl) {
+        try {
+          const response = await fetch(croppedImageUrl)
+          const blob = await response.blob()
+          const reader = new FileReader()
+          const base64Promise = new Promise<string>((resolve) => {
+            reader.onload = () => resolve(reader.result as string)
+            reader.readAsDataURL(blob)
+          })
+          const base64Data = await base64Promise
+          blogDataWithHTML = { ...blogDataWithHTML, image: base64Data }
+        } catch (error) {
+          console.error('Error converting cropped image:', error)
+          setError('Failed to process cropped image')
+          setIsLoading(false)
+          return
+        }
+      }
       
       const blogId = await blogService.createBlog(blogDataWithHTML)
       console.log('Blog created with ID:', blogId)
@@ -156,6 +328,8 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
         published: true
       })
       setImagePreview(null)
+      setCroppedImageUrl(null)
+      setShowCrop(false)
       setIsOpen(false)
       
       // Notify parent component
@@ -312,40 +486,126 @@ export function CreateBlogModal({ onBlogCreated }: CreateBlogModalProps) {
           <div className="space-y-2">
             <Label htmlFor="image">Featured Image</Label>
             <div className="space-y-4">
-              {imagePreview && (
-                <div className="relative">
-                  <img
-                    src={imagePreview}
-                    alt="Preview"
-                    className="w-full h-40 object-cover rounded-lg border"
-                  />
-                  <Button
-                    type="button"
-                    variant="destructive"
-                    size="sm"
-                    className="absolute top-2 right-2"
-                    onClick={removeImage}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
+              {showCrop && imagePreview && (
+                                  <div className="space-y-4">
+                  <div className="text-sm text-muted-foreground">
+                    <p>Position the crop area to select what will show on blog cards (740×320px):</p>
+                    <p className="text-xs text-muted-foreground mt-1">Drag the crop area to reposition. The size is fixed to match blog card dimensions.</p>
+                  </div>
+                  <div className="relative">
+                    <ReactCrop
+                      crop={crop}
+                      onChange={(c) => setCrop(c)}
+                      onComplete={(c) => setCompletedCrop(c)}
+                      aspect={740/320}
+                      disabled={false}
+                      locked={false}
+                      ruleOfThirds={true}
+                      className="blog-crop-area"
+                    >
+                      <img
+                        ref={imgRef}
+                        src={imagePreview}
+                        alt="Crop preview"
+                        onLoad={onImageLoad}
+                        className="max-h-96 w-full object-contain"
+                      />
+                    </ReactCrop>
+                  </div>
+                  <style jsx>{`
+                    :global(.blog-crop-area .ReactCrop__crop-selection) {
+                      border: 2px solid #ff9933 !important;
+                      box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.3) !important;
+                    }
+                    :global(.blog-crop-area .ReactCrop__drag-handle) {
+                      display: none !important;
+                    }
+                    :global(.blog-crop-area .ReactCrop__crop-selection::after) {
+                      content: 'Blog Card Preview (740×320)';
+                      position: absolute;
+                      top: -30px;
+                      left: 0;
+                      background: #ff9933;
+                      color: white;
+                      padding: 4px 8px;
+                      border-radius: 4px;
+                      font-size: 12px;
+                      font-weight: 500;
+                      white-space: nowrap;
+                    }
+                  `}</style>
+                  <div className="flex gap-2">
+                    <Button
+                      type="button"
+                      onClick={handleCropComplete}
+                      disabled={!completedCrop}
+                      className="flex items-center gap-2"
+                    >
+                      <CropIcon className="h-4 w-4" />
+                      Apply Crop
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={handleCropCancel}
+                    >
+                      Cancel
+                    </Button>
+                  </div>
                 </div>
               )}
-              <div className="flex items-center gap-4">
-                <Input
-                  id="image"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  className="hidden"
-                />
-                <Label
-                  htmlFor="image"
-                  className="cursor-pointer flex items-center gap-2 px-4 py-2 border border-input rounded-md hover:bg-accent hover:text-accent-foreground"
-                >
-                  <Upload className="h-4 w-4" />
-                  {imagePreview ? 'Change Image' : 'Upload Image'}
-                </Label>
-              </div>
+              
+              {croppedImageUrl && (
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">
+                    <p>Preview (as it will appear on blog cards):</p>
+                  </div>
+                  <div className="relative inline-block">
+                    <img
+                      src={croppedImageUrl}
+                      alt="Cropped preview"
+                      className="w-96 h-40 object-contain rounded-lg border shadow-sm bg-gray-50"
+                    />
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="sm"
+                      className="absolute top-2 right-2"
+                      onClick={removeImage}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="absolute bottom-2 right-2"
+                      onClick={() => setShowCrop(true)}
+                    >
+                      <CropIcon className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              {!imagePreview && (
+                <div className="flex items-center gap-4">
+                  <Input
+                    id="image"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="hidden"
+                  />
+                  <Label
+                    htmlFor="image"
+                    className="cursor-pointer flex items-center gap-2 px-4 py-2 border border-input rounded-md hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Upload className="h-4 w-4" />
+                    Upload Image
+                  </Label>
+                </div>
+              )}
             </div>
           </div>
 

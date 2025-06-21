@@ -18,7 +18,7 @@ export interface CreateBlogPost {
   title: string
   excerpt: string
   content: string
-  image?: File
+  image?: File | string
   readTime: string
   published: boolean
 }
@@ -43,18 +43,24 @@ export const blogService = {
       
       // Upload image if provided
       if (blogData.image) {
-        console.log('Uploading image...', blogData.image.name)
-        
-        // Skip Firebase Storage and use base64 directly for development
-        // This avoids CORS issues in localhost
-        try {
-          console.log('Converting image to base64 (skipping Firebase Storage due to CORS)...')
-          const base64 = await convertImageToBase64(blogData.image)
-          imageUrl = base64
-          console.log('Base64 conversion successful, length:', base64.length)
-        } catch (base64Error) {
-          console.error('Base64 conversion failed, using default:', base64Error)
-          imageUrl = '/blog/blog_image.png'
+        // Check if image is already a base64 string (from cropping)
+        if (typeof blogData.image === 'string') {
+          console.log('Using provided base64 image data')
+          imageUrl = blogData.image
+        } else {
+          console.log('Uploading image...', blogData.image.name)
+          
+          // Skip Firebase Storage and use base64 directly for development
+          // This avoids CORS issues in localhost
+          try {
+            console.log('Converting image to base64 (skipping Firebase Storage due to CORS)...')
+            const base64 = await convertImageToBase64(blogData.image)
+            imageUrl = base64
+            console.log('Base64 conversion successful, length:', base64.length)
+          } catch (base64Error) {
+            console.error('Base64 conversion failed, using default:', base64Error)
+            imageUrl = '/blog/blog_image.png'
+          }
         }
         
         /* Firebase Storage version (enable when CORS is fixed):

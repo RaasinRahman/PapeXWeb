@@ -33,6 +33,8 @@ export function useAdminAuth() {
     'nicolas@papex.app',
     'michael@papex.app',
     'raasinr@gmail.com', // Your admin email
+    'nico.courbage@gmail.com', // Nico's admin email
+    'mike@series-zero.com', // Mike's admin email
     // Add your Firebase auth email here
     'test@papex.app',
     'admin@gmail.com',
