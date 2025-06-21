@@ -3,10 +3,12 @@
 import { useState, useEffect, use } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Calendar, Clock } from "lucide-react"
+import { ArrowLeft, Calendar, Clock, Edit } from "lucide-react"
 import { MainNavigation, MainFooter } from "@/components/main-navigation"
 import { blogService, BlogPost } from "@/lib/blogService"
 import { Button } from "@/components/ui/button"
+import { useAdminAuth } from "@/hooks/useAdmin"
+import { EditBlogModal } from "@/components/EditBlogModal"
 
 // Static blog content for fallback
 const staticBlogContent: Record<string, string> = {
@@ -63,6 +65,8 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
   const [post, setPost] = useState<BlogPost | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [editModalOpen, setEditModalOpen] = useState(false)
+  const { isAdmin } = useAdminAuth()
 
   const formatDate = (date: any) => {
     if (!date) return ''
@@ -112,6 +116,35 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
 
     fetchPost()
   }, [resolvedParams.slug])
+
+  const handleBlogUpdated = () => {
+    // Refresh the blog post data after update
+    const fetchPost = async () => {
+      try {
+        setLoading(true)
+        
+        // First try to get from Firebase
+        const firebaseBlogs = await blogService.getPublishedBlogs()
+        const firebasePost = firebaseBlogs.find(blog => blog.slug === resolvedParams.slug)
+        
+        if (firebasePost) {
+          setPost(firebasePost)
+        } else {
+          // Fallback to static blog data
+          const staticPost = getStaticPost(resolvedParams.slug)
+          if (staticPost) {
+            setPost(staticPost)
+          }
+        }
+      } catch (error) {
+        console.error('Error refreshing blog post:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchPost()
+  }
 
   const getStaticPost = (slug: string): BlogPost | null => {
     const staticPosts: Record<string, BlogPost> = {
@@ -236,15 +269,30 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
             </div>
 
             <div className="p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex items-center gap-1 text-[#0a3d62] bg-[#0a3d62]/10 px-3 py-1 rounded-full">
-                  <Calendar className="h-3 w-3" />
-                  <span className="text-sm font-medium">{formatDate(post.createdAt)}</span>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1 text-[#0a3d62] bg-[#0a3d62]/10 px-3 py-1 rounded-full">
+                    <Calendar className="h-3 w-3" />
+                    <span className="text-sm font-medium">{formatDate(post.createdAt)}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[#ff9933] bg-[#ff9933]/10 px-3 py-1 rounded-full">
+                    <Clock className="h-3 w-3" />
+                    <span className="text-sm font-medium">{post.readTime}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 text-[#ff9933] bg-[#ff9933]/10 px-3 py-1 rounded-full">
-                  <Clock className="h-3 w-3" />
-                  <span className="text-sm font-medium">{post.readTime}</span>
-                </div>
+                
+                {/* Admin Edit Button - only show for Firebase posts and admins */}
+                {isAdmin && post.id && !post.id.startsWith('static-') && (
+                  <Button
+                    onClick={() => setEditModalOpen(true)}
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-2 hover:bg-[#ff9933] hover:text-white transition-colors"
+                  >
+                    <Edit className="h-4 w-4" />
+                    Edit Post
+                  </Button>
+                )}
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-6 font-gloock leading-tight">
@@ -293,6 +341,16 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
       </main>
 
       <MainFooter />
+      
+      {/* Edit Modal - only render if we have a valid Firebase post */}
+      {post && post.id && !post.id.startsWith('static-') && (
+        <EditBlogModal
+          isOpen={editModalOpen}
+          onClose={() => setEditModalOpen(false)}
+          onBlogUpdated={handleBlogUpdated}
+          blog={post}
+        />
+      )}
     </div>
   )
 } 
