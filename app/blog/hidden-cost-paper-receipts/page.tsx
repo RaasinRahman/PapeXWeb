@@ -165,7 +165,7 @@ export default function BlogPost() {
 
               {/* Call to Action */}
               <div className="bg-gradient-to-r from-[#0a3d62]/5 to-[#ff9933]/5 p-6 rounded-lg border border-[#ff9933]/20 text-center">
-                <h3 className="text-xl font-bold text-[#0a3d62] mb-3">Ready to Go Paperless?</h3>
+                <h3 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock">Ready to Go Paperless?</h3>
                 <p className="text-[#0a3d62] mb-4">Join thousands of businesses making the switch to digital receipts.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link 

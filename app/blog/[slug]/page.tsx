@@ -311,8 +311,8 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
                   }}
                   dangerouslySetInnerHTML={{ 
                     __html: (post.content || staticBlogContent[post.slug] || "")
-                      .replace(/<h2>/g, '<h2 style="font-size: 1.875rem; font-weight: bold; color: #0a3d62; margin: 1.5rem 0 1rem 0; font-family: inherit;">')
-                      .replace(/<h3>/g, '<h3 style="font-size: 1.5rem; font-weight: bold; color: #0a3d62; margin: 1.25rem 0 0.75rem 0; font-family: inherit;">')
+                      .replace(/<h2>/g, '<h2 class="font-gloock" style="font-size: 1.875rem; font-weight: bold; color: #0a3d62; margin: 1.5rem 0 1rem 0;">')
+                      .replace(/<h3>/g, '<h3 class="font-gloock" style="font-size: 1.5rem; font-weight: bold; color: #0a3d62; margin: 1.25rem 0 0.75rem 0;">')
                       .replace(/<a /g, '<a style="color: #ff9933; text-decoration: underline; font-weight: 500;" ')
                       .replace(/<strong>/g, '<strong style="font-weight: bold; color: #0a3d62;">')
                   }}
