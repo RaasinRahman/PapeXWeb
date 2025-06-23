@@ -305,7 +305,7 @@ export default function BlogDetailPage({ params }: BlogDetailPageProps) {
                 </p>
                 
                 <div 
-                  className="text-[#0a3d62] leading-relaxed space-y-6 prose prose-lg max-w-none"
+                  className="text-[#0a3d62] leading-relaxed space-y-6 prose prose-lg max-w-none blog-content"
                   style={{
                     lineHeight: '1.8'
                   }}
