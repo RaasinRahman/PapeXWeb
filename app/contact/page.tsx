@@ -55,6 +55,15 @@ const teamMembers: TeamMember[] = [
     bio: "Leads and oversees the development of PapeX's core technology, focusing on scalable backend systems and a seamless end-user experience."
   },
   {
+    name: "Gus Kirkpatrick",
+    role: "Marketing Lead",
+    image: "/profiles/gus.jpeg",
+    fallbackImage: "/profiles/placeholder.svg",
+    linkedin: "https://www.linkedin.com/in/gus-kirkpatrick/",
+    email: "gus.kirkpatrick@papex.app",
+    bio: "Leads the marketing team while playing a key role in investor relations."
+  },
+  {
     name: "Magali Courbage",
     role: "Advisor / Board Member",
     image: "/profiles/magali_courbage.jpeg",
@@ -71,6 +80,15 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/brunocourbage/",
     email: "bruno.courbage@gmail.com",
     bio: "Transformational product executive with proven success scaling product lines, driving innovation, and delivering P&L performance in SaaS platforms."
+  },
+  {
+    name: "Dawn Lilington",
+    role: "Strategic Connector",
+    image: "/profiles/Dawn.jpeg",
+    fallbackImage: "/profiles/placeholder.svg",
+    linkedin: "https://www.linkedin.com/in/dlillington/",
+    email: "dawn.lilington@papex.app",
+    bio: "Strategic connector and philanthropy engagement lead with over 20 years of experience spanning international government relations, partnership development, and marketing."
   },
 ]
 
@@ -112,7 +130,13 @@ export default function ContactPage() {
                       fallbackSrc={member.fallbackImage}
                       width={200}
                       height={200}
-                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                      className={`w-full h-full group-hover:scale-110 transition-transform duration-500 ${
+                        member.name === "Gus Kirkpatrick" 
+                          ? "object-cover object-left-top" 
+                          : member.name === "Dawn Lilington"
+                          ? "object-cover object-right-top"
+                          : "object-cover"
+                      }`}
                     />
                   </div>
                 </div>
