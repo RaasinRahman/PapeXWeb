@@ -56,7 +56,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Gus Kirkpatrick",
-    role: "Marketing Lead",
+    role: "Marketing",
     image: "/profiles/gus.jpeg",
     fallbackImage: "/profiles/placeholder.svg",
     linkedin: "https://www.linkedin.com/in/gus-kirkpatrick/",
@@ -83,7 +83,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Dawn Lilington",
-    role: "Strategic Connector",
+    role: "Advisor / Board Member",
     image: "/profiles/Dawn.jpeg",
     fallbackImage: "/profiles/placeholder.svg",
     linkedin: "https://www.linkedin.com/in/dlillington/",
