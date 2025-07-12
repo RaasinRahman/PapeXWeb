@@ -44,59 +44,59 @@ export function MainNavigation() {
               width={180} 
               height={180}
               priority
-              className="h-20 w-auto transition-all duration-300"
+              className="h-12 md:h-16 lg:h-20 w-auto transition-all duration-300"
             />
           </Link>
         </div>
         
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden xl:flex">
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-1">
             <NavigationMenuItem>
               <Link href={pathname === "/" ? "#about" : "/#about"} legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Problem & Solution
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href={pathname === "/" ? "#business-model" : "/#business-model"} legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Business Model
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href={pathname === "/" ? "#market-opportunity" : "/#market-opportunity"} legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Revenue Streams
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href={pathname === "/" ? "#traction" : "/#traction"} legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Milestones
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/blog" legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Blog
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/survey" legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Take Our Survey
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/waitlist" legacyBehavior passHref>
-                <NavigationMenuLink className="px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-lg transition-colors duration-300 whitespace-nowrap">
+                <NavigationMenuLink className="px-1 lg:px-2 xl:px-4 py-2 text-[#0a3d62] hover:text-[#ff9933] bg-transparent font-semibold text-xs lg:text-sm xl:text-lg transition-colors duration-300 whitespace-nowrap">
                   Join Waitlist
                 </NavigationMenuLink>
               </Link>
@@ -105,16 +105,16 @@ export function MainNavigation() {
         </NavigationMenu>
         
         {/* Desktop Contact Button */}
-        <div className="hidden xl:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <Link href="/contact">
-            <Button variant="default" className="btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-6 py-3 text-lg transform transition-all duration-300 hover:scale-105 whitespace-nowrap">
+            <Button variant="default" className="btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-2 lg:px-3 xl:px-6 py-1 lg:py-2 xl:py-3 text-xs lg:text-sm xl:text-lg transform transition-all duration-300 hover:scale-105 whitespace-nowrap">
               Contact Us
             </Button>
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="xl:hidden">
+        <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-3 text-[#0a3d62] hover:text-[#ff9933] transition-colors duration-300 focus:outline-none rounded-lg hover:bg-white/30"
@@ -131,7 +131,7 @@ export function MainNavigation() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden glass-dark animate-slide-in-up">
+        <div className="md:hidden glass-dark animate-slide-in-up">
           <div className="container mx-auto px-4 py-6 space-y-2">
             <Link 
               href={pathname === "/" ? "#about" : "/#about"}
