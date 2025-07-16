@@ -39,12 +39,12 @@ export function MainNavigation() {
         <div className="flex items-center">
           <Link href="/" className="transform transition-transform duration-300 hover:scale-105">
             <Image 
-              src="/logos/transparent.png" 
+              src="/logos/papex1.png" 
               alt="PapeX Logo" 
               width={180} 
               height={180}
               priority
-              className="h-12 md:h-16 lg:h-20 w-auto transition-all duration-300"
+              className="h-16 w-auto max-w-none object-contain transition-all duration-300"
             />
           </Link>
         </div>
@@ -208,10 +208,10 @@ export function MainFooter() {
           <div className="flex items-center gap-2 mb-6 md:mb-0 animate-slide-in-left">
             <div className="p-2 glass rounded-full">
               <Image 
-                src="/logos/trans.png"
+                src="/logos/plane.png"
                 alt="PapeX Logo" 
-                width={80} 
-                height={80}
+                width={60} 
+                height={60}
                 priority
                 className="animate-float"
               />

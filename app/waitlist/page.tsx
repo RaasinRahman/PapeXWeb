@@ -13,16 +13,6 @@ export default function WaitlistPage() {
       <main className="flex-1 flex items-center justify-center py-12 px-4">
         <div className="max-w-3xl w-full mx-auto">
           <div className="text-center mb-8">
-            <div className="mb-6 flex justify-center">
-              <Image 
-                src="/logos/transparent.png" 
-                alt="PapeX Logo" 
-                width={160} 
-                height={160}
-                priority
-                className="h-24 w-auto"
-              />
-            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-[#0a3d62] mb-4 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] bg-clip-text text-transparent">Join Our Waitlist</h1>
             <div className="w-24 h-1 bg-gradient-to-r from-[#0a3d62] via-[#1a6eb0] to-[#ff9933] mx-auto mb-6 rounded-full"></div>
             <p className="text-xl text-[#0a3d62] max-w-2xl mx-auto leading-relaxed">
@@ -71,10 +61,10 @@ export default function WaitlistPage() {
               </div>
               <div className="flex-shrink-0 mx-2 bg-[#d0e4f4] px-2">
                 <Image 
-                  src={`/logos/trans.png?t=${Date.now()}`}
+                  src="/logos/plane.png"
                   alt="PapeX Logo" 
-                  width={40} 
-                  height={40}
+                  width={32} 
+                  height={32}
                   className="transform rotate-45 opacity-80"
                 />
               </div>

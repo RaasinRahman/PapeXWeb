@@ -117,7 +117,7 @@ export default function Home() {
                 <div className="absolute h-32 w-32 border-2 border-[#ff9933] rounded-full animate-pulse-slow opacity-30 -z-10"></div>
                 <div className="absolute h-40 w-40 border border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
                 <Image 
-                  src="/trans3.png"
+                  src="/logos/plane.png"
                   alt="PapeX Logo" 
                   width={100}
                   height={100}
@@ -134,7 +134,7 @@ export default function Home() {
                 <div className="absolute h-48 w-48 border border-[#0a3d62] rounded-full animate-ping opacity-20 -z-10"></div>
                 <div className="w-auto h-auto flex items-center justify-center">
                   <Image 
-                    src="/trans3.png"
+                    src="/logos/plane.png"
                     alt="PapeX Logo" 
                     width={140}
                     height={140}
@@ -478,10 +478,10 @@ export default function Home() {
                 <div className="flex-shrink-0 ml-2">
                   <div className="p-2 glass rounded-full">
                     <Image 
-                      src="/logos/trans.png"
+                      src="/logos/plane.png"
                       alt="PapeX Logo" 
-                      width={48} 
-                      height={48}
+                      width={36} 
+                      height={36}
                       className="transform rotate-45 animate-float"
                     />
                   </div>
