@@ -36,21 +36,21 @@ export function MainNavigation() {
         : 'border-b border-[#8ab5d1] backdrop-blur-sm bg-[#d0e4f4]/80'
     }`}>
       <div className="container mx-auto py-3 px-4 flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center flex-shrink-0 min-w-0">
           <Link href="/" className="transform transition-transform duration-300 hover:scale-105">
             <Image 
               src="/logos/papex1.png" 
               alt="PapeX Logo" 
-              width={180} 
-              height={180}
+              width={160} 
+              height={160}
               priority
-              className="h-16 w-auto max-w-none object-contain transition-all duration-300"
+              className="h-10 w-auto object-contain"
             />
           </Link>
         </div>
         
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex flex-1 justify-center mx-4">
           <NavigationMenuList className="gap-1">
             <NavigationMenuItem>
               <Link href={pathname === "/" ? "#about" : "/#about"} legacyBehavior passHref>
@@ -105,7 +105,7 @@ export function MainNavigation() {
         </NavigationMenu>
         
         {/* Desktop Contact Button */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <Link href="/contact">
             <Button variant="default" className="btn-modern gradient-accent hover:shadow-2xl text-white font-medium border-none rounded-full px-2 lg:px-3 xl:px-6 py-1 lg:py-2 xl:py-3 text-xs lg:text-sm xl:text-lg transform transition-all duration-300 hover:scale-105 whitespace-nowrap">
               Contact Us
@@ -114,7 +114,7 @@ export function MainNavigation() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex-shrink-0">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-3 text-[#0a3d62] hover:text-[#ff9933] transition-colors duration-300 focus:outline-none rounded-lg hover:bg-white/30"
