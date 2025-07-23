@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { barlow, gloock } from './fonts'
+import { barlow, kameron } from './fonts'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
@@ -88,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${barlow.variable} ${gloock.variable}`}>
+    <html lang="en" className={`${barlow.variable} ${kameron.variable}`}>
       <head>
         <link rel="icon" href="/papex-favicon.ico" sizes="any" />
         <link rel="icon" href="/papex-favicon.png" type="image/png" />
