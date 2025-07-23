@@ -105,7 +105,7 @@ export default function ContactPage() {
         <div className="absolute bottom-20 right-10 w-28 h-28 gradient-accent rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '6s'}}></div>
 
         <div className="text-center mb-12 animate-slide-in-up relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-4 font-gloock">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#0a3d62] mb-4">
             Meet the PapeX <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Team</span>
           </h1>
           <div className="w-20 h-1 gradient-accent mx-auto mb-4 rounded-full animate-gradient"></div>
@@ -189,25 +189,6 @@ export default function ContactPage() {
                   Join Our Waitlist
                 </Button>
               </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 relative animate-slide-in-up">
-          <div className="relative flex items-center">
-            <div className="flex-1">
-              <div className="w-full h-0.5 border-b border-dashed border-[#ff9933] opacity-60"></div>
-            </div>
-            <div className="flex-shrink-0 ml-2">
-              <div className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md">
-                <Image 
-                  src="/logos/trans.png"
-                  alt="PapeX Logo" 
-                  width={32} 
-                  height={32}
-                  className="transform rotate-45 animate-float"
-                />
-              </div>
             </div>
           </div>
         </div>

@@ -25,7 +25,13 @@ export const barlow = localFont({
 
 // Define the Kameron font
 export const kameron = localFont({
-  src: '../fonts/Kameron-SemiBold.ttf',
+  src: [
+    {
+      path: '../fonts/Kameron-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
   variable: '--font-kameron',
   display: 'swap',
 })

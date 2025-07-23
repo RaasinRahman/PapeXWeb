@@ -34,7 +34,7 @@ export default function BlogPost() {
 
           {/* Article Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 leading-tight">
               The Hidden Cost of Paper Receipts: Why Your Business Should Care
             </h1>
             <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-6">
@@ -52,7 +52,7 @@ export default function BlogPost() {
                 Every day, millions of shoppers walk away from stores clutching small paper receipts. These little strips of paper seem harmless enough. But when we zoom out and look at the bigger picture, the truth is shocking. Paper receipts are creating massive problems that most of us never think about – harming both our planet and your business's bottom line.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Mountain of Paper Receipts We Create
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -70,7 +70,7 @@ export default function BlogPost() {
                 All of this waste happens just so customers can get a piece of paper they'll likely throw away within minutes.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Toxic Truth About Receipt Paper
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-4">
@@ -88,7 +88,7 @@ export default function BlogPost() {
                 The CDC has found that <a href="https://www.epa.gov/sites/default/files/2015-05/documents/biomonitoring-bpa.pdf" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">93% of Americans have BPA in their bodies</a>, and receipt handling is one major way we're exposed to it.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Business Cost of Paper Receipts
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-4">
@@ -104,7 +104,7 @@ export default function BlogPost() {
                 For a medium-sized retailer processing 1,000 transactions daily, receipt costs can add up to over $18,000 per year!
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 A Better Way: Digital Receipts with PapeX
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-4">
@@ -126,7 +126,7 @@ export default function BlogPost() {
                 Our digital receipt solution <a href="https://www.papex.app/#business-model" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">costs just $0.01 per receipt</a> – less than paper receipts – while completely eliminating the environmental impact.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 Small Change, Big Impact
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-4">
@@ -150,7 +150,7 @@ export default function BlogPost() {
                 It's a simple shift that adds up to a meaningful difference—for your business and the planet.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Smarter Way to Do Receipts
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-4">
@@ -165,7 +165,7 @@ export default function BlogPost() {
 
               {/* Call to Action */}
               <div className="bg-gradient-to-r from-[#0a3d62]/5 to-[#ff9933]/5 p-6 rounded-lg border border-[#ff9933]/20 text-center">
-                <h3 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock">Ready to Go Paperless?</h3>
+                <h3 className="text-xl font-bold text-[#0a3d62] mb-3">Ready to Go Paperless?</h3>
                 <p className="text-[#0a3d62] mb-4">Join thousands of businesses making the switch to digital receipts.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link 
