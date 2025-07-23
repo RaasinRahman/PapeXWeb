@@ -68,15 +68,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/papex-favicon.ico', sizes: 'any' },
-      { url: '/papex-favicon.png', type: 'image/png' }
+      { url: '/APP_Logo.png', sizes: 'any' },
+      { url: '/APP_Logo.png', type: 'image/png' }
     ],
-    shortcut: [{ url: '/papex-favicon.ico' }],
-    apple: [{ url: '/apple-icon.png' }],
+    shortcut: [{ url: '/APP_Logo.png' }],
+    apple: [{ url: '/APP_Logo.png' }],
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/apple-icon.png',
+        url: '/APP_Logo.png',
       },
     ],
   }
@@ -90,9 +90,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${barlow.variable} ${kameron.variable}`}>
       <head>
-        <link rel="icon" href="/papex-favicon.ico" sizes="any" />
-        <link rel="icon" href="/papex-favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="icon" href="/APP_Logo.png" sizes="any" />
+        <link rel="icon" href="/APP_Logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/APP_Logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="font-barlow">

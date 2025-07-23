@@ -72,8 +72,8 @@ export default function Home() {
           
           <div className="md:w-1/2 space-y-6 animate-slide-in-left">
             <h1 className="text-4xl md:text-6xl font-bold text-[#0a3d62] leading-tight font-gloock">
-              Revolutionizing 
-              <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent"> Digital Receipts</span>
+              Revolutionizing <br />
+              <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Digital Receipts</span>
             </h1>
             <p className="text-xl text-[#0a3d62] md:pr-12 opacity-90">
               PapeX is developing a digital platform that eliminates the need for physical, email, or text receipts, seamlessly bridging the gap between financial transactions and financial management.
