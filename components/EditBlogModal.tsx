@@ -87,31 +87,15 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
   const onImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
     const { width, height } = e.currentTarget
     
-    // Calculate crop area to match blog card dimensions (740x320px = 2.3125:1 aspect ratio)
-    const targetWidth = 740
-    const targetHeight = 320
-    const aspectRatio = targetWidth / targetHeight
-    
-    let cropWidth, cropHeight, cropX, cropY
-    
-    if (width / height > aspectRatio) {
-      // Image is wider than target aspect ratio
-      cropHeight = height
-      cropWidth = height * aspectRatio
-      cropX = (width - cropWidth) / 2
-      cropY = 0
-    } else {
-      // Image is taller than target aspect ratio
-      cropWidth = width
-      cropHeight = width / aspectRatio
-      cropX = 0
-      cropY = (height - cropHeight) / 2
-    }
+    // Calculate crop area for square images (1:1 aspect ratio)
+    const size = Math.min(width, height)
+    const cropX = (width - size) / 2
+    const cropY = (height - size) / 2
     
     setCrop({
       unit: 'px',
-      width: cropWidth,
-      height: cropHeight,
+      width: size,
+      height: size,
       x: cropX,
       y: cropY
     })
@@ -119,8 +103,8 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
     // Also set completed crop immediately
     setCompletedCrop({
       unit: 'px',
-      width: cropWidth,
-      height: cropHeight,
+      width: size,
+      height: size,
       x: cropX,
       y: cropY
     })
@@ -134,9 +118,9 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
       throw new Error('No 2d context')
     }
 
-    // Set canvas size to blog card dimensions (740x320)
-    canvas.width = 740
-    canvas.height = 320
+    // Set canvas size to square dimensions (400x400)
+    canvas.width = 400
+    canvas.height = 400
 
     // Calculate scale factors between natural image size and displayed size
     const scaleX = image.naturalWidth / image.width
@@ -158,8 +142,8 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
       scaledCrop.height,
       0,
       0,
-      740,
-      320
+      400,
+      400
     )
 
     return new Promise((resolve) => {
@@ -187,9 +171,21 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
   }, [completedCrop, getCroppedImg])
 
   const handleCropCancel = () => {
+    // If we were re-cropping an existing image, restore the original state
+    if (croppedImageUrl && imagePreview === croppedImageUrl) {
+      setImagePreview(null)
+    }
     setShowCrop(false)
     setCrop(undefined)
     setCompletedCrop(undefined)
+  }
+
+  const handleReCrop = () => {
+    if (croppedImageUrl) {
+      // Set the existing image as the preview so we can crop it
+      setImagePreview(croppedImageUrl)
+      setShowCrop(true)
+    }
   }
 
   // Rich text formatting functions
@@ -347,7 +343,7 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[800px] max-h-[95vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Edit Blog Post</DialogTitle>
         </DialogHeader>
@@ -475,15 +471,15 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
               {showCrop && imagePreview && (
                 <div className="space-y-4">
                   <div className="text-sm text-muted-foreground">
-                    <p>Position the crop area to select what will show on blog cards (740×320px):</p>
-                    <p className="text-xs text-muted-foreground mt-1">Drag the crop area to reposition. The size is fixed to match blog card dimensions.</p>
+                    <p>Position the crop area to select what will show on blog cards (square format):</p>
+                    <p className="text-xs text-muted-foreground mt-1">Drag the crop area to reposition. The crop will be square to match the new blog layout.</p>
                   </div>
-                  <div className="relative">
+                  <div className="relative bg-gray-50 p-4 rounded-lg border max-h-[70vh] overflow-auto">
                     <ReactCrop
                       crop={crop}
                       onChange={(c) => setCrop(c)}
                       onComplete={(c) => setCompletedCrop(c)}
-                      aspect={740/320}
+                      aspect={1}
                       disabled={false}
                       locked={false}
                       ruleOfThirds={true}
@@ -494,7 +490,8 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
                         src={imagePreview}
                         alt="Crop preview"
                         onLoad={onImageLoad}
-                        className="max-h-96 w-full object-contain"
+                        className="max-w-full h-auto block mx-auto"
+                        style={{ maxHeight: 'none' }}
                       />
                     </ReactCrop>
                   </div>
@@ -507,7 +504,7 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
                       display: none !important;
                     }
                     :global(.blog-crop-area .ReactCrop__crop-selection::after) {
-                      content: 'Blog Card Preview (740×320)';
+                      content: 'Square Blog Preview (400×400)';
                       position: absolute;
                       top: -30px;
                       left: 0;
@@ -550,7 +547,7 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
                     <img
                       src={croppedImageUrl}
                       alt="Cropped preview"
-                      className="w-96 h-40 object-contain rounded-lg border shadow-sm bg-gray-50"
+                      className="w-60 h-60 object-cover rounded-lg border shadow-sm bg-gray-50"
                     />
                     <Button
                       type="button"
@@ -566,7 +563,7 @@ export function EditBlogModal({ isOpen, onClose, onBlogUpdated, blog }: EditBlog
                       variant="outline"
                       size="sm"
                       className="absolute bottom-2 right-2"
-                      onClick={() => setShowCrop(true)}
+                      onClick={handleReCrop}
                     >
                       <CropIcon className="h-4 w-4" />
                     </Button>

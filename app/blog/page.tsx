@@ -123,10 +123,10 @@ export default function BlogPage() {
 
 
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-            {[...Array(4)].map((_, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+            {[...Array(6)].map((_, index) => (
               <div key={index} className="bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/30 shadow-lg animate-pulse h-full flex flex-col">
-                <div className="w-full h-80 bg-gray-200 flex-shrink-0"></div>
+                <div className="w-full aspect-square bg-gray-200 flex-shrink-0"></div>
                 <div className="p-6 space-y-4 flex flex-col flex-grow">
                   <div className="flex gap-4 flex-shrink-0">
                     <div className="h-4 bg-gray-200 rounded w-20"></div>
@@ -145,7 +145,7 @@ export default function BlogPage() {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {blogPosts.map((post, index) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group h-full">
               <article 
@@ -161,11 +161,11 @@ export default function BlogPage() {
                       src={post.image}
                       alt={post.title}
                       width={400}
-                      height={320}
-                      className={`w-full h-80 group-hover:scale-105 transition-transform duration-500 object-cover`}
+                      height={400}
+                      className={`w-full aspect-square group-hover:scale-105 transition-transform duration-500 object-cover`}
                     />
                   ) : (
-                    <div className="w-full h-80 bg-gradient-to-br from-[#0a3d62]/10 to-[#ff9933]/10 flex items-center justify-center">
+                    <div className="w-full aspect-square bg-gradient-to-br from-[#0a3d62]/10 to-[#ff9933]/10 flex items-center justify-center">
                       <div className="text-center">
                         <div className="w-16 h-16 mx-auto mb-4 bg-[#0a3d62]/20 rounded-full flex items-center justify-center">
                           <svg className="w-8 h-8 text-[#0a3d62]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

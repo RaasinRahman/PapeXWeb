@@ -90,6 +90,14 @@ const teamMembers: TeamMember[] = [
     email: "dawn.lilington@papex.app",
     bio: "Strategic connector and philanthropy engagement lead with over 20 years of experience spanning international government relations, partnership development, and marketing."
   },
+  {
+    name: "Bert Friedman",
+    role: "Advisor / Board Member",
+    image: "/profiles/bert_720.jpeg",
+    fallbackImage: "/profiles/placeholder.svg",
+    email: "bert.friedman@papex.app",
+    bio: "Strategic compliance leader with a track record of advising fintechs on regulatory risk, building scalable compliance programs, forging bank partnerships, and aligning operations with evolving state and federal laws."
+  },
 ]
 
 export default function ContactPage() {
