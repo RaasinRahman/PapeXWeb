@@ -4,8 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/papex-favicon.png" />
-        <link rel="shortcut icon" href="/papex-favicon.ico" />
+        <link rel="icon" href="/APP_Logo.png" />
+        <link rel="shortcut icon" href="/APP_Logo.png" />
       </Head>
       <body>
         <Main />

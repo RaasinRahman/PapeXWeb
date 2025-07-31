@@ -34,7 +34,7 @@ export default function BlogPost() {
 
           {/* Article Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 leading-tight">
               Why Every Business Owner Secretly Hates Printing Receipts (But Keeps Doing It)
             </h1>
             <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-6">
@@ -55,7 +55,7 @@ export default function BlogPost() {
                 Most business owners dislike checkout tasks. After payment processing fees, receipt printing is usually their next complaint. Walk into most businesses today, and you'll hear the familiar sound of thermal printers. They churn out paper receipts, one transaction at a time.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Overlooked Costs Adding Up Behind Your Counter
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -77,7 +77,7 @@ export default function BlogPost() {
                 For something so small, receipts create a surprisingly big mess behind the counter.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 When Checkout Gets Clunky
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -93,7 +93,7 @@ export default function BlogPost() {
                 You watch customers fumble for email addresses at checkout, slowing down your line. You see them decline email receipts because they're tired of inbox clutter. And you keep printing paper receipts because, well, what else are you supposed to do?
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 This Should Be Automatic by Now
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -109,7 +109,7 @@ export default function BlogPost() {
                 This costs money, creates waste, and often fails when you need it most.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 We're Stuck in the Middle
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -128,7 +128,7 @@ export default function BlogPost() {
                 Everything else has evolved. The receipt just hasn't gotten the memo.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 What If There Was a Better Way?
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -141,7 +141,7 @@ export default function BlogPost() {
                 There's no extra hardware or change to your checkout flow. It's a small shift with a big impact, making receipts one less thing you have to think about.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Future is Digital
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">

@@ -63,9 +63,9 @@ export default function WaitlistPage() {
                 <Image 
                   src="/logos/plane.png"
                   alt="PapeX Logo" 
-                  width={32} 
-                  height={32}
-                  className="transform rotate-45 opacity-80"
+                  width={42} 
+                  height={42}
+                  className="transform -rotate-60 opacity-80"
                 />
               </div>
               <div className="flex-1">

@@ -34,7 +34,7 @@ export default function BlogPost() {
 
           {/* Article Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#0a3d62] mb-4 leading-tight">
               The History of Receipts: From Handwritten Notes to Digital Revolution
             </h1>
             <div className="flex items-center gap-4 text-sm text-[#0a3d62]/70 mb-6">
@@ -58,7 +58,7 @@ export default function BlogPost() {
                 Until now.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Very Beginning: Proof of Purchase Through the Ages
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -71,7 +71,7 @@ export default function BlogPost() {
                 Some things never change.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Handwritten Era: 1600s-1800s
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -90,7 +90,7 @@ export default function BlogPost() {
                 Then came carbon paper in the 1800s. Game changer. Merchants could make copies—one for the customer, one for their records. Suddenly, both parties had proof.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Machine Age: 1879-1960s
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -109,7 +109,7 @@ export default function BlogPost() {
                 That white paper that <a href="https://telemarkcorp.com/what-is-thermal-paper-receipt-and-how-does-it-work/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="text-[#ff9933] hover:underline">turns black in a hot car</a>? That's thermal paper. It's what most stores still use today.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Digital Age: 1980s-2010s
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -131,7 +131,7 @@ export default function BlogPost() {
                 It made no sense.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Missing Link: Today's Challenge
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -153,7 +153,7 @@ export default function BlogPost() {
                 We pay digitally, then get paper proof, then manually enter that information back into digital systems.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Digital Receipt Revolution: What's Coming Next
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -169,7 +169,7 @@ export default function BlogPost() {
                 Just like payments evolved from coins to cards to tap-to-pay, receipts are evolving from handwritten notes to thermal paper to true digital delivery.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 What This Means for You
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">
@@ -185,7 +185,7 @@ export default function BlogPost() {
                 And you're about to see the biggest improvement yet.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 The Pattern Is Clear
               </h2>
               <ul className="list-disc pl-6 mb-6 text-[#0a3d62] space-y-2">
@@ -199,7 +199,7 @@ export default function BlogPost() {
                 Digital receipts solve all these problems better than anything before.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4 font-gloock">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0a3d62] mb-4">
                 Looking Back, Moving Forward
               </h2>
               <p className="text-[#0a3d62] leading-relaxed mb-6">

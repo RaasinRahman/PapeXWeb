@@ -23,9 +23,15 @@ export const barlow = localFont({
   display: 'swap',
 })
 
-// Define the Gloock font
-export const gloock = localFont({
-  src: '../fonts/Gloock-Regular.ttf',
-  variable: '--font-gloock',
+// Define the Kameron font
+export const kameron = localFont({
+  src: [
+    {
+      path: '../fonts/Kameron-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-kameron',
   display: 'swap',
 })

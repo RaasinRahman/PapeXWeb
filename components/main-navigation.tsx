@@ -263,10 +263,10 @@ export function MainFooter() {
           <Link href="https://www.linkedin.com/company/papexreceipts/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">
             <Linkedin className="h-6 w-6" />
           </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">
+          <Link href="https://x.com/Papex_App" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">
             <Twitter className="h-6 w-6" />
           </Link>
-          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">
+          <Link href="https://www.instagram.com/papex.app?igsh=ZjVkbm80eWprcTgz" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">
             <Facebook className="h-6 w-6" />
           </Link>
           <Link href="https://www.instagram.com/papex.app?igsh=ZjVkbm80eWprcTgz" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff9933] transition-all duration-300 p-3 glass rounded-full card-hover">

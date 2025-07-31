@@ -111,7 +111,7 @@ export default function BlogPage() {
         <div className="absolute bottom-20 right-1/4 w-28 h-28 gradient-hero rounded-full opacity-5 blur-xl animate-float" style={{animationDelay: '5s'}}></div>
 
         <div className="text-center mb-12 animate-slide-in-up relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0a3d62] mb-4 font-gloock">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0a3d62] mb-4">
             PapeX <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Blog</span>
           </h1>
           <div className="w-20 h-1 gradient-accent mx-auto mb-6 rounded-full animate-gradient"></div>
@@ -191,7 +191,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl font-bold text-[#0a3d62] mb-3 font-gloock group-hover:text-[#ff9933] transition-colors duration-300 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
+                  <h2 className="text-2xl font-bold text-[#0a3d62] mb-3 group-hover:text-[#ff9933] transition-colors duration-300 line-clamp-2 flex-shrink-0 min-h-[3.5rem]">
                     {post.title}
                   </h2>
                   
@@ -216,7 +216,7 @@ export default function BlogPage() {
             <div className="absolute bottom-0 right-0 w-32 h-32 gradient-primary rounded-full blur-xl opacity-5"></div>
             
             <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-[#0a3d62] mb-3 font-gloock">
+              <h2 className="text-2xl font-bold text-[#0a3d62] mb-3">
                 Stay <span className="bg-gradient-to-r from-[#ff9933] to-[#e67e22] bg-clip-text text-transparent">Updated</span>
               </h2>
               <p className="text-[#0a3d62] mb-6 font-medium">
